@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen 2 parcial </title>
+    <style>
+        table{
+            background-color: rgb(247, 194, 130);
+             border: 100000px black;
+            text-align: left;   
+            padding: 1px ;
+            margin: 100px;
+            
+        }
+        article{
+            text-align: center;
+        }
+        .input type{
+            text-align: center;
+        }
+        
+        button{
+		padding: 15px 40px;
+		background-color: #000000;
+		border: none;
+		font-size: 700;
+		text-transform: uppercase;
+
+		color: #fff;
+	}
+    button:hover{
+		padding: 15px 70px;
+		background-color: #e05c0f;
+	}
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <table border="100000px" >
+        <th>
+    <h1>RECIBO TELEFONICO</h1>
+
+    <form id="calculominutos" action="examen.2.ata.html" method="GET">
+         <label for="">
+            Minutos de celular ($10.00 c/u)
+        </label>
+    <br>
+        <input type="number" name="numero" id="minCel" value="100">
+    <br>
+    
+       <h2>Tipo de Plan </h2>
+    
+    <div class="opcion">
+      <input type="radio" name="plan" value="tel" id="tel">
+      <label for="tel">Solo telefono(100 MX)</label>
+    </div>
+    <br>
+    <div class="opcion">
+      <input type="radio" name="plan" value="internet" id="tel">
+      <label for="tel">Telefono + Internet(200MX)</label>
+    </div>
+    <br>
+    <div class="opcion">
+      <input type="radio" name="plan" value="tv" id="tel">
+      <label for="tel">Telefono + Internet + TV(300 MX)</label>
+    </div>
+    <h2>Otros Servicios </h2>
+    <div class="opcion">
+      <input type="checkbox" name="antivirus" value="" id="">
+      <label for="contratacion">Antivirus(50MX)</label>
+    </div>
+    <br>
+     <div class="opcion">
+      <input type="checkbox" name="nube" value="" id="">
+      <label for="contratacion">Servicio de Nube(150MX)</label>
+    </div>
+    <br>
+     <div class="opcion">
+      <input type="checkbox" name="ws" value="" id="">
+      <label for="contratacion">web services(250MX)</label>
+    </div>
+    <br>
+    
+        <label for="">Paquetes</label>
+        <br>
+        <select name="paquetes">
+            <option value="residencial">Residencial(200MX)</option>
+            <option value="pyme">PYMES(300MX)</option>
+            <option value="empresa">Empresas(400MX)</option>
+        </select>
+
+         <hr>
+        <div class="result">
+			<input type="text" id="resultado"></p>
+		</div>	
+
+        <button type="button" onclick="calcular()">Calcular</button>
+    </form>
+</th>
+    </table>
+</body>
+<script>
+
+    var formulario = document.getElementById("calculominutos");
+
+    function calcular() {
+
+        var total = 0;
+        var minCel = formulario.minCel.value;
+        total = minCel * 10
+
+
+        //Condiciones anidadas(radios)
+        if (formulario.plan.value == "tel")
+             { 
+        total = total + 100;
+            }
+    else if (formulario.plan.value == "internet")
+            { 
+        total = total + 200;
+            }
+     else if (formulario.plan.value == "tv")
+             { 
+        total = total + 300;
+            }
+    else {
+        alert("seleccionar un Tipo de Plan")
+        }
+        //Condiciones simples(checkbox)
+        if(formulario.antivirus.checked){
+            total = total + 50;   
+        }
+         if(formulario.nube.checked){
+            total = total + 150;   
+        }
+         if(formulario.ws.checked){
+            total = total + 250;   
+        }
+        //Condiciones anidadas(radios)
+        if (formulario.paquetes.value == "residencial")
+             { 
+        total = total + 200;
+            }
+    else if (formulario.paquetes.value == "pyme")
+            { 
+        total = total + 300;
+            }
+     else if (formulario.paquetes.value == "empresa")
+             { 
+        total = total + 400;
+            }
+
+        formulario.resultado.value = total;
+
+    }
+
+</script>
+</html>
