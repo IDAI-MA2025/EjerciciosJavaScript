@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza</title>
+    <style>
+        body{
+            background-color: #F09201;
+        }
+        .contenedor{
+            background-color: #F09201;
+            width: 100%;
+            height: 600px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .items{
+            background-color: #F09201;
+			width: 30%;
+			height: 600px;
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+			text-align: left;
+        }
+        .Totalboton{
+            border: none;
+            background-color: #F09201;
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <hr>
+    <div class="contenedor">
+        <div class="items">
+            <form action="EjercicioPizza-RAHG.html" id="calculopizza">
+                <label for="#Pizzas">
+                    Cantidad de Pizzas:
+                </label>
+                <input type="number" id="#Pizzas" value="1">
+                <hr>
+                <h1>Tamaño</h1>
+                <input type="radio" name="tamaño" value="personal">Personal ($45 MXN)<br>
+                <input type="radio" name="tamaño" value="chica">Chica ($90 MXN)<br>
+                <input type="radio" name="tamaño" value="mediana">Mediana ($150 MXN)<br>
+                <input type="radio" name="tamaño" value="familiar">Familiar ($250 MXN)<br>
+                <input type="radio" name="tamaño" value="suprema">Suprema ($400 MXN)<br>
+                <hr>
+                <h1>Tipo de pan</h1>
+                <input type="radio" name="pan" value="normal">Normal (No hay costo extra)<br>
+                <input type="radio" name="pan" value="delgada">Delgada ($15 MXN)<br>
+                <input type="radio" name="pan" value="panpizza">Pan pizza ($20 MXN)<br>
+                <input type="radio" name="pan" value="hutcheese">Hut cheese ($30 MXN)<br>
+            </form>
+        </div>
+        <div class="items">
+            <form action="EjercicioPizza-RAHG.html" id="calculopizza">
+                <h1>Ingredientes</h1>
+                <input type="checkbox" name="jamon">Jamon ($10 MXN)<br>
+                <input type="checkbox" name="peperoni">Peperoni ($15 MXN)<br>
+                <input type="checkbox" name="tocino">Tocino ($10 MXN)<br>
+                <input type="checkbox" name="champiñones">Champiñones ($15 MXN)<br>
+                <input type="checkbox" name="chorizo español">Chorizo Español ($10 MXN)<br>
+                <input type="checkbox" name="piña">Piña ($5 MXN)<br>
+                <input type="checkbox" name="salami">Salami ($15 MXN)<br>
+                <input type="checkbox" name="aceitunas">Aceitunas ($5 MXN)<br>
+                <hr>
+                <h2>Especiales</h2>
+                <select name="especial">
+                    <option value="margarita">Margarita ($59 MXN)</option>
+                    <option value="4quesos">4 Quesos ($69 MXN)</option>
+                    <option value="hawaiana">Hawaiana ($79 MXN)</option>
+                    <option value="napolitana">Napolitana ($89 MXN)</option>
+                    <option value="newyork">New York ($99 MXN)</option>
+                </select>
+                <hr>
+            </form>
+            <form action="EjercicioPizza-RAHG.html" id="Validacionbuffet">
+                <h2>¿Quieres buffet?
+                    <select name="buffet" id="buffetsn">
+                        <option value="si">Si</option>
+                        <option value="no">No</option>
+                    </select>
+                </h2>
+                <label for="#Adultos">
+                    Cantidad de adultos ($250 MXN c/u):
+                </label>
+                <input type="number" id="#Adultos" value="1">
+                <br>
+                <label for="#Niños">
+                    Cantidad de niños ($150 MXN c/u):
+                </label>
+                <input type="number" id="#Niños" value="1">
+            </form>
+        </div>
+        <div class="items">
+            <hr>
+            <hr>
+            <div class="resultadopìzza">
+                <button type="button" onclick="calcular()" class="Totalboton">Total a pagar</button>
+                <input type="text" id="resultadopìzza"></p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <footer>
+        
+    </footer>
+</body>
+<script>
+
+</script>
+</html>
