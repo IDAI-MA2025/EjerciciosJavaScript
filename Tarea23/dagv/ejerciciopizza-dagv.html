@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Pizza</title>
+    <style>
+        header{
+            background-image: url(img/pizza2.png); height: 50px;background-repeat: repeat-x;
+        }
+        body {
+            background-color: #ffa001;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        footer{
+            background-image: url(img/pizza2.png); height: 50px;background-repeat: repeat-x;
+        }
+        table {
+            width: 80%;
+            margin: auto;
+            background-color: #ffa001;
+            color: white;
+            padding: 5px;
+        }
+        td {
+            width: 30%;
+            vertical-align: top;
+        }
+        .uno {
+            color: white;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .dos {
+            width: 50px;
+        }
+        .tres {
+            text-transform: uppercase;
+            background-color: rgb(46, 46, 46);
+            color: white;
+            text-align: center;
+            font-weight: 800;
+            margin: 2px;
+            
+        }
+        .cuatro {height: 50px;
+
+        }
+        .contenedor{
+			width: 100%;
+			height: 300px;
+			float: left;
+			margin: 10px;
+			display: flex;
+			flex-flow: row wrap;
+            align-content: flex-start;
+            
+		}
+        .center{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="cuatro"></div>
+    </header>
+    <main>
+    <hr color="red" size="3">
+    <form id="calculopizzas" action="pizzas-dagv.html" method="GET">
+        <table>
+        <tr>
+            <td>
+                <label class="uno" for="number">Cantidad: </label>
+                <input class="dos" type="number" id="cant" value="1" required>
+
+                <hr color="white" size="2" width="90%">
+
+                <label class="uno" for="">Tamaño: </label><br>
+                <input type="radio" name="size" value="p">Personal<br>
+                <input type="radio" name="size" value="c">Chica<br>
+                <input type="radio" name="size" value="m">Mediana<br>
+                <input type="radio" name="size" value="f">Familiar<br>
+                <input type="radio" name="size" value="s">Suprema<br>
+
+                <hr color="white" size="2" width="90%">
+
+                <label class="uno" for="">Tipo de pan:  </label><br>
+                <input type="radio" name="type" value="n">Normal<br>
+                <input type="radio" name="type" value="d">Delgada<br>
+                <input type="radio" name="type" value="pp">Pan Pizza<br>
+                <input type="radio" name="type" value="hc">Hut Chesse<br>
+                <br>
+            </td>
+            <td>
+                <label class="uno" for="">Ingredientes: </label><br>
+                <input type="checkbox" name="ja">Jamón<br>
+                <input type="checkbox" name="pe">Peperoni<br>
+                <input type="checkbox" name="to">Tocino<br>
+                <input type="checkbox" name="cha">Champiñones<br>
+                <input type="checkbox" name="cho">Chozio Español<br>
+                <input type="checkbox" name="pi">Piña<br>
+                <input type="checkbox" name="sa">Salami<br>
+                <input type="checkbox" name="ac">Aceitunas<br>
+                
+                <hr color="white" size="2" width="90%">
+
+                <br>
+                <label class="uno" for="">Especiales: </label><br>
+                <select name="especiales">
+                <option value="no">No</option>
+                <option value="ma">Margarita</option>
+                <option value="4q">4 Quesos</option>
+                <option value="ha">Hawaiana</option>
+                <option value="na">Napolitana</option>
+                <option value="ny">New York</option>
+                </select>
+
+                <hr color="white" size="2" width="90%">
+                <hr color="white" size="2" width="90%">
+
+                <label class="uno" for="">¿Quieres Buffet? </label>
+                <select name="buffet">
+                <option value="no">No</option>
+                <option value="si">Si</option>
+                </select>
+                <label for="adultos">Número de Adultos: </label>
+                <input class="dos"  type="number" id="noa" value="" required><br>
+                <label for="niños">Número de Niños: </label>
+                <input class="dos" type="number" id="non" value="" required><br>
+            </td>
+            <td>
+                <img src="img/logo.png"  width="90% ">
+                <hr color="black" size="2" width="90%">
+                <p class="tres">keep calm and eat pizza</p>
+                <hr color="white" size="2" width="90%">
+                <hr color="white" size="2" width="90%">
+                <div class="result">
+                <p class="uno center">Total a pagar:
+			        <input class="dos" type="text" id="resultado"></p>
+		        </div>	             
+            </td>
+        </tr>
+        </table>
+    </form>
+    <hr color="red" size="3">
+    </main>
+    <footer>
+        <div class="cuatro"></div>
+    </footer>
+</body>
+</html>
