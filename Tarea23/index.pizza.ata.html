@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="estilo.ata.css">
+     <script defer src="ejercicio.ata.js"></script>
+    <title>Pizza</title>
+</head>
+<body>
+ <div class="Formulario"></div>
+  <h1>PIZZA UN </h1>     <img src="../Tarea23/logo.pizzaun.ata.jpg" alt="Logo" style="position: fixed; top: 10px; right: 10px; width: 100px;" >
+  <table>
+
+  <label >CANTIDAD:
+    <input type="numer" id="cantidad" value="1" min="1">
+  </label>
+  
+
+  <h2>TAMAÑO:</h2>
+  <label for=""><input type="radio" name="tamaño" value="45"> Personal ($45)</label>
+  <label for=""><input type="radio" name="tamaño" value="90"> Chica ($90)</label> 
+  <label for=""><input type="radio" name="tamaño" value="150"> Mediana ($150) </label>
+  <label for=""><input type="radio" name="tamaño" value="250"> Familiar ($250)</label>
+  <label for=""><input type="radio" name="tamaño" value="400"> Suprema ($400)</label>
+<hr>
+  <h2>TIPO DE PAN:</h2>
+  <label for=""><input type="radio" name="pan" value="0"> Normal ($0)</label>
+  <label for=""><input type="radio" name="pan" value="15"> Chica($15)</label>
+  <label for=""><input type="radio" name="pan" value="20">Mediana($20)</label>
+  <label for=""><input type="radio" name="pan" value="30"> Familiar ($30)</label>
+  <hr>
+
+  
+  <h2>INGREDIENTES:</h2>
+  <label for=""><input type="checkbox" name="" value="10"> Jamon ($10)</label>
+  <label for=""><input type="checkbox" name="" value="10"> Tocinio ($10)</label>
+    <label for=""><input type="checkbox" name="" value="10"> Chorizo Español ($10)</label>
+  <label for=""><input type="checkbox" name="" value="15"> Peperoni($15)</label>
+  <label for=""><input type="checkbox" name="" value="15"> Champiñones ($15)</label>
+  <label for=""><input type="checkbox" name="" value="15"> Salami ($15)</label>
+  <label for=""><input type="checkbox" name="" value="5"> Piña ($5)</label>
+  <label for=""><input type="checkbox" name="" value="5"> Aceituna ($5)</label>
+ <hr>
+  <h2>ESPECIAL:</h2>
+   <select id="especial">
+     <option value="O">Ninguna</option>
+  <option value="59">Margarita ($59)</option>
+   <option value="69">4 Quesos ($69)</option>
+   <option value="79">Hawaiana ($79)</option>
+   <option value="89">Napolitana($89)</option>
+   <option value="99">New York ($99)</option>
+      </select>
+      <hr>
+     
+
+      <h2>¿QUIERES BUFFET?</h2>
+    <select id="buffet" onchange="toggleOpciones()">
+      <option value="no">No</option>
+      <option value="si">Sí</option>
+    </select>
+       <div id="buffetInfo" style="display:none;">
+      <label>Adultos: <input type="number" id="adultos" value="0" min="0"></label>
+      <label>Niños: <input type="number" id="ninos" value="0" min="0"></label>
+     </div>
+    
+   
+
+  
+
+    <h2>Total a pagar: $<span id="total">0</span></h2>
+ 
+
+  
+
+</body>
+</html>
