@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo telefonico</title>
+
+   <style>
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; 
+}
+
+.contenedor-recibo{
+    background-color: #ffef0c;
+    border: 2px solid black;
+    padding: 30px;
+    width: 350px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+h2{
+    font-size: 15px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.seccion{
+    margin-bottom: 20px;
+}
+
+.seccion label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.boton-calcular{
+    width: 100%;
+    padding: 12px;
+    background-color: #d3d3d3;
+    border: 1px solid #a0a0a0;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: 1s;
+}
+
+.boton-calcular:hover{
+    background-color: rgba(255, 254, 248, 0.932);
+}
+   </style>
+
+</head>
+<body>
+        <div class="contenedor-recibo">
+        <h1>RECIBO TELEFÓNICO</h1>
+        <form class="formulario-recibo" id="formulario-recibo" action="Recibo.html" method="get">
+            <div class="seccion">
+                <label for="minutos">Minutos de Celular (10.00 c/u):</label>
+                <input type="number" id="minutos" name="minutos" value="100">
+            </div>
+
+            <div class="seccion">
+                <h2>TIPO DE PLAN</h2>
+                <div class="opciones-radio">
+                    <label><input type="radio" name="tipo_plan" value="solo_telefono"> Solo teléfono (100 MXN)</label>
+                    <label><input type="radio" name="tipo_plan" value="telefono_internet"> Teléfono + Internet (200 MXN)</label>
+                    <label><input type="radio" name="tipo_plan" value="telefono_internet_tv"> Teléfono + Internet + TV (300 MXN)</label>
+                </div>
+            </div>
+
+            <div class="seccion">
+                <h2>OTROS SERVICIOS</h2>
+                <div class="opciones-checkbox">
+                    <label><input type="checkbox" name="antivirus" value="antivirus"> Antivirus (50 MXN)</label>
+                    <label><input type="checkbox" name="nube" value="nube"> Servicio de Nube (150 MXN)</label>
+                    <label><input type="checkbox" name="web" value="web_services"> Web Services (250 MXN)</label>
+                </div>
+            </div>
+
+            <div class="seccion">
+                <h2>PAQUETES</h2>
+                <select name="paquetes" id="paquetes">
+                    <option value="residencial">RESIDENCIAL (200 MXN)</option>
+                    <option value="pymes">PYMES (400 MXN)</option>
+                    <option value="empresas">EMPRESAS (600 MXN)</option>
+                </select>
+            </div>
+
+            <div class="resultado">
+                <input type="text" id="resultado" placeholder="Resultado">
+            </div>
+
+            <button type="button" onclick="calcular()" class="boton-calcular">CALCULAR</button>
+
+            </form>
+
+            
+        </div>
+   
+</body>
+
+<script>
+    var formulario = document.getElementById("formulario-recibo")
+
+    function calcular() {
+
+        var total = 0;
+        var minutos = formulario.minutos.value;
+
+        total = minutos * 10;
+
+        // Obtener el valor del tipo de plan seleccionado
+        var tipoPlanSeleccionado = document.querySelector('input[name="tipo_plan"]:checked');
+
+        //Condiciones aninadas (radios)
+        if (tipoPlanSeleccionado) {
+            if (tipoPlanSeleccionado.value == "solo_telefono") {
+                total = total + 100;
+            } else if (tipoPlanSeleccionado.value == "telefono_internet") {
+                total = total + 200;
+            } else if (tipoPlanSeleccionado.value == "telefono_internet_tv") {
+                total = total + 300;
+            }
+        } else {
+            alert("Seleccionar un Tipo de Plan");
+        }
+
+
+        //Condiciones simples (checkbox)
+        if (formulario.antivirus.checked) {
+            total = total + 50;
+        }
+
+        if (formulario.nube.checked) {
+            total = total + 150;
+        }
+
+        if (formulario.web.checked) { // Corregido: 'web_services' a 'web'
+            total = total + 250;
+        }
+
+
+        if (formulario.paquetes.value == "residencial") {
+            total = total + 200
+        } else if (formulario.paquetes.value == "pymes") {
+            total = total + 400
+        } else if (formulario.paquetes.value == "empresas") {
+            total = total + 600
+        } else {
+            alert("seleccionar un plan ")
+        }
+
+
+        formulario.resultado.value = total;
+    }
+
+</script>
+  
+</html>
