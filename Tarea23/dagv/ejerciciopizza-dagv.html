@@ -18,7 +18,7 @@
         <tr>
             <td>
                 <label class="uno" for="number">Cantidad: </label>
-                <input class="dos" type="number" id="cant" value="1" max="999">
+                <input class="dos" type="number" id="cant" value="1" min="1" max="999">
 
                 <hr color="white" size="2" width="90%">
 
@@ -74,9 +74,9 @@
                 </form>
                 <form id="buffet2">
                 <label for="adultos">Número de Adultos: </label>
-                <input class="dos"  type="number" id="noa" value="" required><br>
+                <input class="dos"  type="number" id="noa" value="" required min="1" max="999"><br>
                 <label for="niños">Número de Niños: </label>
-                <input class="dos" type="number" id="non" value="" required><br>
+                <input class="dos" type="number" id="non" value="" required min="1" max="999"> <br>
                 </form>
             </td>
             <td>
@@ -98,3 +98,4 @@
     </footer>
 </body>
 </html>
+
