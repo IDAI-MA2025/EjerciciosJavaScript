@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pizza CEMHZ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: orange;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 20px;
+    }
+    .banner-top, .banner-bottom {
+      background-image: url('cemhz/banner.png');
+      height: 50px;
+      background-size: contain;
+      background-repeat: repeat-x;
+    }
+    form {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background: #fff3e0;
+      padding: 20px;
+      border-radius: 10px;
+      gap: 20px;
+    }
+    .columna {
+      flex: 1;
+      min-width: 250px;
+    }
+    .logo {
+      width: 100%;
+      max-width: 200px;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #333;
+    }
+    input[type="text"], input[type="number"], select {
+      width: 100%;
+      padding: 5px;
+      margin: 5px 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="banner-top"></div>
+
+    <form id="formPizza">
+      <div class="columna izquierda">
+        <label>CANTIDAD: <input type="number" id="cantidad" value="1" min="1"></label>
+
+        <div>
+          <strong>TAMAÑO:</strong><br>
+          <label><input type="radio" name="tamano" value="45"> Personal</label><br>
+          <label><input type="radio" name="tamano" value="90"> Chica</label><br>
+          <label><input type="radio" name="tamano" value="150"> Mediana</label><br>
+          <label><input type="radio" name="tamano" value="250"> Familiar</label><br>
+          <label><input type="radio" name="tamano" value="400"> Suprema</label>
+        </div>
+
+        <div>
+          <strong>TIPO DE PAN:</strong><br>
+          <label><input type="radio" name="pan" value="0"> Normal</label><br>
+          <label><input type="radio" name="pan" value="15"> Delgada</label><br>
+          <label><input type="radio" name="pan" value="20"> Pan Pizza</label><br>
+          <label><input type="radio" name="pan" value="30"> Hut Cheese</label>
+        </div>
+      </div>
+
+      <div class="columna centro">
+        <strong>INGREDIENTES:</strong><br>
+        <label><input type="checkbox" value="10"> Jamon</label><br>
+        <label><input type="checkbox" value="15"> Peperoni</label><br>
+        <label><input type="checkbox" value="10"> Tocino</label><br>
+        <label><input type="checkbox" value="15"> Champiñones</label><br>
+        <label><input type="checkbox" value="10"> Chorizo Español</label><br>
+        <label><input type="checkbox" value="5"> Piña</label><br>
+        <label><input type="checkbox" value="15"> Salami</label><br>
+        <label><input type="checkbox" value="5"> Aceitunas</label><br><br>
+
+        <strong>ESPECIALES:</strong>
+        <select id="especial">
+          <option value="0">Ninguna</option>
+          <option value="59">Margarita</option>
+          <option value="69">4 Quesos</option>
+          <option value="79">Hawaiana</option>
+          <option value="89">Napolitana</option>
+          <option value="99">New York</option>
+        </select><br><br>
+
+        <strong>¿Quieres buffet?</strong>
+        <select id="buffet">
+          <option value="no">NO</option>
+          <option value="si">SÍ</option>
+        </select><br>
+        <label>Número de adultos: <input type="number" id="adultos" value="0" min="0"></label><br>
+        <label>Número de niños: <input type="number" id="ninos" value="0" min="0"></label>
+      </div>
+
+      <div class="columna derecha">
+        <img src="logo.pizzaun.ata.jpg" alt="" class="logo">
+        <button type="submit">KEEP CALM AND EAT PIZZA</button>
+        <div><strong>TOTAL A PAGAR:</strong> $<span id="total">0.00</span></div>
+      </div>
+    </form>
+
+    <div class="banner-bottom"></div>
+  </div>
+
+  <script>
+    document.getElementById('formPizza').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const cantidad = parseInt(document.getElementById('cantidad').value) || 0;
+      const especial = parseFloat(document.getElementById('especial').value);
+      const buffet = document.getElementById('buffet').value;
+      const adultos = parseInt(document.getElementById('adultos').value) || 0;
+      const ninos = parseInt(document.getElementById('ninos').value) || 0;
+
+      let total = 0;
+
+      if (buffet === 'si') {
+        total = (adultos * 250) + (ninos * 150);
+      } else if (especial > 0) {
+        total = cantidad * especial;
+      } else {
+        // Precio tamaño
+        const tamano = parseFloat(document.querySelector('input[name="tamano"]:checked')?.value || 0);
+
+        // Precio pan
+        const pan = parseFloat(document.querySelector('input[name="pan"]:checked')?.value || 0);
+
+        // Ingredientes
+        let ingredientes = 0;
+        document.querySelectorAll('input[type="checkbox"]:checked').forEach(el => {
+          ingredientes += parseFloat(el.value);
+        });
+
+        total = cantidad * (tamano + pan + ingredientes);
+      }
+
+      document.getElementById('total').textContent = total.toFixed(2);
+    });
+  </script>
+</body>
+</html>
