@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
         var formulario = document.getElementById("calculopizzas");
-        
+        var formulario2 = document.getElementById("buffet2");
+        var resultadoInput = document.getElementById("resultado");
         function calcular(){
         var total = 0;
         var pizza = 0;
         var cantidad = formulario.cant.value;
+        var niños = formulario2.non.value * 150;
+        var adultos = formulario2.noa.value * 250; 
             
         /* Tamaño */
         if (formulario.size.value == "p"){
@@ -85,7 +88,14 @@ document.addEventListener('DOMContentLoaded', function() {
         else{alert("Selaccionar una Especialidad")}
                 
         total = cantidad * pizza;
-        formulario.resultado.value = "$" + total + "MXN";
+        if (total == 0){
+        resultadoInput.value = "$" + (niños + adultos) + "MXN";
+
+        }
+        else {
+        resultadoInput.value = "$" + total + "MXN";
+        }
+        
         
         
     }
@@ -93,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formulario.addEventListener('change', calcular);
         calcular();
 
+        
         var calculoForm = document.getElementById("calculopizzas");
         var buffetForm = document.getElementById("buffet");
         var buffet2Form = document.getElementById("buffet2");
@@ -114,8 +125,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var buffetSi = selectActive.value === "si";
     // Desactiva/activa Pizzas
     Array.from(calculoForm.elements).forEach(function(el) {
+    if (el.id !== "resultado") {
         el.disabled = buffetSi;
-    });
+    }
+});
     // Desactiva/activa Buffet
     Array.from(buffet2Form.elements).forEach(function(el) {
         el.disabled = !buffetSi;
@@ -130,4 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     selectActive.addEventListener('change', toggleForms);
     toggleForms();
+
+    
 });
