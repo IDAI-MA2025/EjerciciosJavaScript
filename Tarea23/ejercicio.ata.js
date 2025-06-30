@@ -1,14 +1,14 @@
 window.addEventListener('DOMContentLoaded', () => {
-  let cant = document.getElementById('cantidad');
-  let tamaño = document.querySelectorAll('input[name="tamaño"]');
-  let pan = document.querySelectorAll('input[name="pan"]');
-  let ing = document.querySelectorAll('input[type="checkbox"]');
-  let esp = document.getElementById('especial');
-  let buf = document.getElementById('buffet');
-  let ad = document.getElementById('adultos');
-  let ni = document.getElementById('ninos');
-  let total = document.getElementById('total');
-  let zonaBuf = document.getElementById('buffetInfo');
+                let cant = document.getElementById('cantidad');
+                let tamaño = document.querySelectorAll('input[name="tamaño"]');
+                let pan = document.querySelectorAll('input[name="pan"]');
+                let ing = document.querySelectorAll('input[type="checkbox"]');
+                let esp = document.getElementById('especial');
+                let buf = document.getElementById('buffet');
+                let ad = document.getElementById('adultos');
+                let ni = document.getElementById('ninos');
+                let total = document.getElementById('total');
+                let zonaBuf = document.getElementById('buffetInfo');
 
 function verValor(radio) {
     for (let i = 0; i < radio.length; i++) {
@@ -18,23 +18,23 @@ function verValor(radio) {
     return 0; }
 
   window.toggleOpciones = function () {
-    if (buf.value === 'si') {
-      zonaBuf.style.display = 'block';
-      cant.disabled = true;
-      esp.disabled = true;
-      tamaño.forEach(x => x.disabled = true);
-      pan.forEach(x => x.disabled = true);
-      ing.forEach(x => x.disabled = true);
-    } else {
-      zonaBuf.style.display = 'none';
-      cant.disabled = false;
-      esp.disabled = false;
-      tamaño.forEach(x => x.disabled = false);
-      pan.forEach(x => x.disabled = false);
-      ing.forEach(x => x.disabled = false);
-    }
-    calcular();
-  };
+                    if (buf.value === 'si') {
+                    zonaBuf.style.display = 'block';
+                    cant.disabled = true;
+                    esp.disabled = true;
+                    tamaño.forEach(x => x.disabled = true);
+                    pan.forEach(x => x.disabled = true);
+                    ing.forEach(x => x.disabled = true);
+                    } else {
+                    zonaBuf.style.display = 'none';
+                    cant.disabled = false;
+                    esp.disabled = false;
+                    tamaño.forEach(x => x.disabled = false);
+                    pan.forEach(x => x.disabled = false);
+                    ing.forEach(x => x.disabled = false);
+                    }
+                    calcular();
+                };
 
   function calcular() {
     let tot = 0;

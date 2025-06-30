@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzas tarea</title>
+    <link rel="stylesheet" href="pizzaAFPG.css">
+    <script src="pizzaAFPG.js"></script>
+
+</head>
+<body>
+    
+    <header>
+        <img src="img/imgName/OIP.jpg" alt="logoheader">
+        <img src="img/imgName/OIP.jpg" alt="logoheader">
+        <img src="img/imgName/OIP.jpg" alt="logoheader">
+        
+    </header>
+
+    <div class="contenedor">
+
+       <form action="" id="pizzas">
+            <h1>Cantidad <input class="cantidadess" type="number" id="cantidad" value="1" min="1" style="width: 70px; height: 35px;"> <hr></h1>
+            <hr>
+
+            <div class="tamaño section">
+                <h1>Tamaño:</h1>
+                <input type="radio" name="tamaños" value="personal" data-precio="120"> Personal ($120)<br>
+                <input type="radio" name="tamaños" value="chica" data-precio="150"> Chica ($150)<br>
+                <input type="radio" name="tamaños" value="mediana" data-precio="180"> Mediana ($180)<br>
+                <input type="radio" name="tamaños" value="familiar" data-precio="220"> Familiar ($220)<br>
+                <input type="radio" name="tamaños" value="suprema" data-precio="280"> Suprema ($280)<br>
+                <hr>
+            </div>
+
+            <div class="tipodepan section">
+                <h1>Tipo de pan</h1>
+                <input type="radio" name="pan" value="normal" data-precio="0"> Normal (Sin costo adicional)<br>
+                <input type="radio" name="pan" value="delgada" data-precio="10"> Delgada (+$10)<br>
+                <input type="radio" name="pan" value="panpizza" data-precio="25"> Pan pizza (+$25)<br>
+                <input type="radio" name="pan" value="hutcheese" data-precio="35"> Hut Cheese (+$35)<br>
+            </div>
+
+            <div class="ingredientes section">
+                <h1>Ingredientes adicionales ($15 c/u)</h1>
+                <input type="checkbox" name="ingrediente" value="jamon" data-precio="15">
+                    <label>Jamón (+$15)</label><br>
+                <input type="checkbox" name="ingrediente" value="peperoni" data-precio="15">
+                    <label>Pepperoni (+$15)</label><br>
+                <input type="checkbox" name="ingrediente" value="tocino" data-precio="15">
+                    <label>Tocino (+$15)</label><br>
+                <input type="checkbox" name="ingrediente" value="champiñones" data-precio="15">
+                    <label>Champiñones (+$15)</label><br>
+                <input type="checkbox" name="ingrediente" value="chorizo" data-precio="15">
+                    <label>Chorizo español (+$15)</label><br>
+                <input type="checkbox" name="ingrediente" value="piña" data-precio="15">
+                    <label>Piña (+$15)</label><br>
+                <input type="checkbox" name="ingrediente" value="salami" data-precio="15">
+                    <label>Salami (+$15)</label><br>
+                <input type="checkbox" name="ingrediente" value="aceitunas" data-precio="15">
+                    <label>Aceitunas (+$15)</label>
+                    <br>
+                
+            </div>
+
+            <div class="especiales section">
+                <h1>Pizzas Especiales</h1>
+                <select name="tipode" id="especial">
+                    <option value="" data-precio="0">Ninguna</option>
+                    <option value="margarita" data-precio="50">Margarita (+$50)</option>
+                    <option value="4quesos" data-precio="75">4 quesos (+$75)</option>
+                    <option value="hawaiana" data-precio="60">Hawaiana (+$60)</option>
+                    <option value="napolitana" data-precio="65">Napolitana (+$65)</option>
+                    <option value="newyork" data-precio="80">New York (+$80)</option>
+                </select>
+                <br>
+                <hr>
+            </div>
+
+            <div class="buffet section">
+                <h1>¿Quieres buffet?</h1>
+                <select name="buffet" id="buffet">
+                    <option value="no">No</option>
+                    <option value="si">Sí</option>
+                </select>
+                <br><br>
+                <div id="buffet-options" style="display: none;">
+                    <label>Número de adultos:</label>
+                    <input type="number" id="adultos" name="adultos" value="1" min="0" style="width: 50px; height: 25px;">
+                    <span>($180 c/u)</span><br><br>
+                    <label>Número de niños:</label>
+                    <input type="number" id="niños" name="niños" value="0" min="0" style="width: 50px; height: 25px;">
+                    <span>($120 c/u)</span>
+                </div>
+            </div>
+
+            <div class="logo section">
+                <img src="img/imgName/logo.pizzaun.ata.jpg" alt="logo" style="width: auto; height: 250px;">
+            </div>
+            <div class="pago">
+                <h1>Total a pagar</h1>
+                <input type="text" name="totalapagar" id="pago" value="$0" readonly style="width: 120px; height: 30px;">
+                <br><br>
+                <button type="button" id="calcular-btn" onclick="calcularTotal()" >
+                    Calcular Total
+                </button>
+            </div>
+        </form>
+
+    </div>
+
+    <footer>
+         <img class="footer-logo" src="img/imgName/OIP.jpg" alt="logoheader">
+        <img  class="footer-logo"  src="img/imgName/OIP.jpg" alt="logoheader">
+        <img  class="footer-logo"  src="img/imgName/OIP.jpg" alt="logoheader">
+    </footer>
+</body>
+</html>
