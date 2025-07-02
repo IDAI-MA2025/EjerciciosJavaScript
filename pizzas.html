@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzas</title>
+
+    <style>
+        .grid{
+            display: grid;
+            grid-template-columns: 30% 30% 30%;
+            grid-template-rows: 20% 20%;
+            grid-template-areas: "1  Pan  TAMAÑO";
+        
+        }
+
+        .cantidad{
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="grid">
+ <form id="Precio" action="pizzas.html" method="get">
+    <div class="cantidad">
+    <label for="">Cantidad</label>
+    <input type="text" id="Cantidad" value="1">
+    </div>
+    <hr>
+     <div class="TAMAÑO">
+    <label for="">TAMAÑO:</label>
+    <br>
+    <input type="radio" name="tamaño">Personal<br>
+    <input type="radio" name="tamaño">Chica<br>
+    <input type="radio" name="tamaño">Mediana<br>
+    <input type="radio" name="tamaño">Familiar<br>
+    <input type="radio" name="tamaño">Suprema<br>
+    <hr>
+    </div>
+    <div class="Pan">
+    <label for="">TIPO DE PAN:</label>
+    <br>
+    <input type="radio" name="">Normal<br>
+    <input type="radio" name="">Delgada<br>
+    <input type="radio" name="">Pan pizza<br>
+    <input type="radio" name="">Hut cheese<br>
+    <hr>
+    </div>
+    <label for="">INGREDIENTES:</label>
+    <br>
+    <input type="checkbox" name="">Jamón<br>
+    <input type="checkbox" name="">Peperoni<br>
+    <input type="checkbox" name="">Tocino<br>
+    <input type="checkbox" name="">Champiñones<br>
+    <input type="checkbox" name="">Chorizo español<br>
+    <input type="checkbox" name="">Piña<br>
+    <input type="checkbox" name="">Salami<br>
+    <input type="checkbox" name="">Aceitunas<br>
+    <hr>
+     <label for="">ESPECIALES:</label>
+    <select name="" id="">
+        <option value="59">Margarita</option>
+        <option value="69">Cuatro quesos</option>
+        <option value="79">Hawaina</option>
+        <option value="89">Napolitana</option>
+        <option value="99">New York</option>
+    </select>
+    <hr>
+     <label for="">¿QUIERES BUFFET?</label>
+    <select name="" id="">
+        <option value="">Sí</option>
+        <option value="">No</option><br>
+    </select>
+    <br>
+    <label for="">Número de adultos</label>
+    <input type="text" id="Cantidad" value="">
+    <br>
+    <label for="">Número de niños</label>
+    <input type="text" id="Cantidad" value="">
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </form>
+ </div>
+</body>
+</html>

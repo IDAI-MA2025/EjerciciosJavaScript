@@ -1,0 +1,65 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    padding: 20px;
+}
+
+.grid-container{
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.grid-container{
+    display: grid;
+    gap: 20px;
+    border: 10px;
+    grid-template: "header header header" 100px 50px
+                   "clase1   clase4 clase7"
+                   "clase2   clase5  clase8"
+                   "clase3   clase6  clase9";
+
+    .header{
+        grid-area: header;
+        background-color: orange;
+    }
+    .clase1{
+        grid-area: clase1;
+        background-color:rgb(9, 132, 204);
+        width: 90px;
+        height: 70px;
+    }
+    .clase2{
+        grid-area: clase2;
+        background-color: orange;
+    }
+    .clase3{
+        grid-area: clase3;
+        background-color: rgb(139, 33, 160);
+    }
+    .clase4{
+        grid-area: clase4;
+        background-color: orange;
+    }
+    .clase5{
+        grid-area: clase5;
+        background-color: orange;
+    }
+    .clase6{
+        grid-area: clase6;
+        background-color: orange;
+    }
+    .clase7{
+        grid-area: clase7;
+        background-color: orange;
+    }
+    .clase8{
+        grid-area: clase8;
+        background-color: orange;
+    }
+    .clase9{
+        grid-area: clase9;
+        background-color: orange;
+    }
+}
