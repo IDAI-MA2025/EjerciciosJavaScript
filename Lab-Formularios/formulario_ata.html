@@ -119,7 +119,7 @@
 
 		<div class="two-columns">
 			<div class="fields">
-				<label for="tel">Telefono</label>
+				<label for="tel">Teléfono</label>
 				<input id="tel" type="text" name="tel" autocomplete="off">
 			</div>
 
@@ -142,48 +142,73 @@
 		</div>
 
 		<div class="fields term">
-			<label for="term">Terminos y Condiciones</label>
+			<label for="term">Términos y Condiciones</label>
 			<input type="checkbox" name="term" id="term">
 		</div>
 
 		<div class="btn">
-			<input type="submit" name="enviar" id="btn" value="Enviar"
-			 onclick="validarDatos(event)">
+			<input type="submit" name="enviar" id="btn" value="Enviar" onclick="validarDatos(event)">
 		</div>
-     </form>  
-	 <script>
-		var formulario = document.getElementById("formulario");
+	</form>  
 
+	<script>
+		function validarDatos(e) {
+			const nombre = document.getElementById("name").value.trim();
+			const apellido = document.getElementById("lastname").value.trim();
+			const telefono = document.getElementById("tel").value.trim();
+			const correo = document.getElementById("email").value.trim();
 
-		function validarDatos(e){
-			var nombre = document.formulario.name.value;
-			var apellido = document.formulario.lastname.value;
-			var telefono = document.formulario.tel.value;
-			var correo = document.formulario.email.value;
+			let esValido = true;
 
-			if (nombre == ""){
-				alert("El campo nombre es obligatorio");
-				e.preventDefault();
+			if (!validarCampo("name", "nombre")) esValido = false;
+			if (!validarCampo("lastname", "apellido")) esValido = false;
+			if (!validarCampo("tel", "teléfono")) esValido = false;
+			if (!validarCampo("email", "correo")) esValido = false;
+			if (!validarSexo()) esValido = false;
+			if (!validarTerminos()) esValido = false;
+
+			if (!esValido) {
+				e.preventDefault(); // Solo si hubo errores se detiene el envío
+			} else {
+				const sexoSeleccionado = document.querySelector('input[name="sexo"]:checked').value;
+				alert("Nombre: " + nombre + "\n" +
+					  "Apellido: " + apellido + "\n" +
+					  "Teléfono: " + telefono + "\n" +
+					  "Correo: " + correo + "\n" +
+					  "Sexo: " + sexoSeleccionado);
 			}
-
-			if(apellido == ""){
-				alert("El campo apellido es obligatorio");
-				e.preventDefault();
-			}
-			if(telefono == ""){
-				alert("El campo telefono es obligatorio");
-				e.preventDefault();
-			}
-			if (correo == ""){
-			alert("El campo correo es obligatorio");
-				e.preventDefault();
-			}
-			alert("nombre: " + nombre + "\n" +
-			"apellido: " + apellido + "\n");
-
-			
 		}
-	 </script>  
+
+		
+		function validarCampo(idCampo, nombreCampo) {
+			const valor = document.getElementById(idCampo).value.trim();
+			if (valor === "") {
+				alert("El campo " + nombreCampo + " es obligatorio");
+				return false;
+			}
+			return true;
+		}
+
+		
+		function validarSexo() {
+			const sexo = document.querySelector('input[name="sexo"]:checked');
+			if (!sexo) {
+				alert("Debe seleccionar un sexo");
+				return false;
+			}
+			return true;
+		}
+
+		
+		function validarTerminos() {
+			const terminos = document.getElementById("term").checked;
+			if (!terminos) {
+				alert("Debe aceptar los términos y condiciones");
+				return false;
+			}
+			return true;
+		}
+	</script>
      
 </body>
 </html>
