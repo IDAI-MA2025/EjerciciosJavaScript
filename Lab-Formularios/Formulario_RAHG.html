@@ -155,18 +155,46 @@
      <script>
         var formulario = document.getElementById("formulario");
 
-        function validarDatos(e) {
-
-            var nombre = document.formulario.name.value;
+		function validarPersonal(e){
+			var nombre = document.formulario.name.value;
             var apellido = document.formulario.lastname.value;
             var telefono = document.formulario.tel.value;
-            var correo = document.formulario.mail.value;
+            var correo = document.formulario.email.value;
 
             if(nombre==""){
                 alert("El campo del nombre es obligatorio")
-                e.preventDefault(); //Evita la alerta
+                e.preventDefault(); 
             }
-        }
+			if(apellido==""){
+                alert("El campo del apellido es obligatorio")
+                e.preventDefault(); 
+            }
+			if(telefono==""){
+                alert("El campo del telefono es obligatorio")
+                e.preventDefault(); 
+            }
+			if(correo==""){
+                alert("El campo del correo es obligatorio")
+                e.preventDefault(); 
+			}
+		}
+		function validarSexo(e){
+				if(document.formulario.sexo[0].checked == false && document.formulario.sexo[1].checked == false){
+					alert("Escoga sus sexo")
+					e.preventDefault();
+				}
+		}
+		function validarTerminos(e){
+				if(document.formulario.term.checked == false){
+					alert("Acepte los terminos y condiciones")
+					e.preventDefault();
+				}
+		}
+		function validarDatos(e) {
+			validarPersonal(e);
+			validarSexo(e);
+			validarTerminos(e);
+		}
      </script>
 </body>
 </html>
