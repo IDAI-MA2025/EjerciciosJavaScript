@@ -156,72 +156,65 @@
 
     var formulario = document.getElementById("formulario");
 
-	function validiarCampos (e){
 
-	} 
+		function validarCampos(e) {
+			var nombre = document.formulario.name.value;
+			var apellido = document.formulario.lastname.value;
+			var telefono = document.formulario.tel.value;
+			var correo = document.formulario.email.value;
 
-    function ValidarDatos(e){
-  e.preventDefault(); // Prevenir que el formulario se envíe
-
-        var nombre = document.formulario.name.value;
-        var apellido = document.formulario.lastname.value;
-        var telefono = document.formulario.tel.value;
-        var correo = document.formulario.email.value;
-
-      
-         
-		if ("nombre") {
-			alert("el campo nombre es obligatorio")
-			e.preventDefault();
-		}
-
-		if ("apellido"){
-			alert("el campo apellido es obligatorio")
-			e.preventDefault();
-		}
-	if ("telefono") {
-			alert("el campo telefono es obligatorio")
-			e.preventDefault();
-		}
-
-		if ("correo") {
-			alert("el campo correo es obligatorio")
-			e.preventDefault();
-		}
-	
-		
-	
-		if (document.fomulario.sexo[0].checked == true
-			|| document.formulario.sexo[1].checked ==true)
-
-			{
-
-			}
-			else{
-				alert("Debe seleccionar un sexo");
-				e.preventDefault
+			if (nombre == "") {
+				alert("El campo nombre es obligatorio");
+				e.preventDefault(); 
 			}
 
-			if (document.formulario.tern.checked == true){
-
-			}else{
-				alert("Debe aceptar los terminos y condiciones")
-				e.preventDefault
+			if (apellido == "") {
+				alert("El campo apellido es obligatorio");
+				e.preventDefault(); 
 			}
-		
-		
 
+			if(telefono == "") {
+				alert("El campo telefono es obligatorio");
+				e.preventDefault(); 
+			}
 
+			if (correo == "") {
+				alert("El campo correo es obligatorio");
+				e.preventDefault(); 
+			}
+		}
 
+		function validarSexo(e) {
+			if(document.formulario.sexo[0].checked == true
+				|| document.formulario.sexo[1].checked == true)
+				{
+					
+				}
+			else
+				{
+					alert("Debe seleccionar un sexo");
+					e.preventDefault(); 
+				}
+		}
 
+		function validarTerminos(e) {
+			if (document.formulario.tern.checked == true) {
+				
+			} else {
+				alert("Debe aceptar los terminos y condiciones");
+				e.preventDefault();
+			}
+		}
 
+		function validarDatos(e) {
 
+			validarCampos(e);
+			
+			validarSexo(e);
+			
+			validarTerminos(e);
 
-
-
-	} 
-
-		validiarCampos(e);
+		};
 		
 </script>
 
