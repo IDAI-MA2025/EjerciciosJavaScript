@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agencia de Viajes</title>
+    <link rel="stylesheet" href="styles-dagv.css">
+</head>
+<body>
+    <header>
+        <hr color="white" size="4">
+        <table>
+            <tr>
+                <td><img src="img/viajar.jpg" alt="Logo de la Agencia de Viajes">
+                </td>
+                <td class="tres">
+                    <h1>TRAVEL in STYLE</h1>
+                    <p class="uno">==  AGENCY ==</p>
+                    <hr color="white">
+                    <marquee behavior="scroll" direction="right" scrollamount="22   ">Tu pase a conocer el mundo</marquee>
+                    <hr color="white">
+                    <p class="dos">CRUCEROS,TOURS, PLAYAS CIUDADES</p>
+                </td>
+            </tr>
+        </table>
+        <hr color="white" size="4">
+    </header>
+    <main>
+        <form id="viaje" action="index-dagv.html" method="get">
+            <div class="datos">
+                <ul>
+                <li><label for="nombre">NOMBRE:</label><input type="text" id="nombre" name="nombre" ></li>
+                <li><label for="tel">TELEFONO:</label><input type="text" id="tel" name="tel" required pattern="\d{8}" minlength="8" maxlength="8" title="Debe ser un número de 8 dígitos"></li>
+                <li><label for="mail">EMAIL:</label><input type="email" id="mail" name="mail" required></li>
+                <li><label for="adress">DIRECCIÓN:</label><input type="text" id="adress" name="adress" required></li>
+                </ul>
+            </div>
+            <p class="cuatro">TODOS LOS PRECIOS ESTAN EN DOLARES</p>
+            <table class="cinco">
+                <tr>
+                    <td class="siete">
+                        <hr>
+                        <label class="seis" for="">CRUCEROS (POR PERSONA): </label><br>
+                        <input type="radio" name="crucero" value="sn">SIN CRUCERO ($0.00)<br>
+                        <input type="radio" name="crucero" value="sc">SUDAMERICA COLORIDA ($2,879.00)<br>
+                        <input type="radio" name="crucero" value="ee">EUROPA DE ENSUEÑO ($3,454.00)<br>
+                        <input type="radio" name="crucero" value="at">ASIA DE TRADICIONES ($1,840.00)<br>
+                        <input type="radio" name="crucero" value="ac">AVENTURA CARIBEÑA ($1,069.00)<br>
+                        <input type="radio" name="crucero" value="da">DESCUBRIENDO ALASKA ($1,237.00)<br>
+                        <hr>
+                        <label class="seis" for="">EXTRAS (POR PERSONA ADULTA): </label><br>
+                        <input type="checkbox" name="ex1">BEBIDAS ALCOHOLICAS ($300.00)<br>
+                        <input type="checkbox" name="ex2">CLASES DE BUCEO ($150.00)<br>
+                        <input type="checkbox" name="ex3">3 TOURS DE EXPEDICION ($500.00)<br>
+                        <input type="checkbox" name="ex4">PAQUETE DE FOTOGRAFIAS ($100.00)<br>
+                        <input type="checkbox" name="ex5">PESCA EN ALTAMAR ($250.00)<br>
+                        <hr>
+                        <label class="seis" for="">NUMERO DE ADULTOS:</label>
+                        <select name="adultos">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            </select><br>
+                        <label class="seis" for="">NUMERO DE NIÑOS:</label>
+                        <select name="niños">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            </select>
+                    </td>
+                    <td class="siete">
+                        <hr>
+                        <p class="seis">SERVICIOS ADICIONALES</p>
+                        <hr>
+                        <label class="seis" for="">TRANSPORTE (POR PERSONA) </label><br>
+                        <input type="radio" name="trans" value="t1">SIN AVION ($0.00)<br>
+                        <input type="radio" name="trans" value="t2">AVION IDA Y VUELTA ($150.00)<br>
+                        <hr>
+                        <label class="seis" for="">HOTEL (CUOTA POR DIA): </label><br>
+                        <label for="">NUMERO DE HABITACIONES DE HOTEL:</label><input type="number" id="hab" name="hab" min="0"><br>
+                        <label for="">NUMERO DE DIAS DE HOTEL:</label><input type="number" id="dias" name="dias" min="0"><br>   
+                        <input type="radio" name="hotel" value="h2">HABITACION SENCILLA ($100.00)<br>
+                        <input type="radio" name="hotel" value="h3">HABITACION DOBLE ($150.00)<br>
+                        <input type="radio" name="hotel" value="h4">HABITACION SUITE ($250.00)<br>
+                        <hr>
+                        <label class="seis" for="">ESTACIONAMIENTO (POR DIAS DE HOTEL):</label><br>
+                        <input type="radio" name="estacionamiento" value="e1">SIN ESTACIONAMIENTO ($0.00)<br>
+                        <input type="radio" name="estacionamiento" value="e2">ESTACIONAMIENTO ($10.00)<br>
+                    </td>
+                </tr>
+            </table>
+            <p class="ocho">PRESUPUESTO DE VIAJE: <input class="" type="text" id="resultado"> (DOLARES $21.00)</p>
+            <p class="ocho">PRESUPUESTO DE VIAJE: <input type="text" id="resultado2"> (PESOS MXN)</p>
+            <p class="ocho">PRESUPUESTO DE VIAJE: <input type="text" id="resultado3"> (EUROS $26.00)</p>
+        
+            <hr color="white" size="4">
+
+            <div class="enviar">
+                <ul>
+                <li><img class="icon" src="img/wpp.png" alt=""><br><input class="btn" type="submit" name="enviar" id="btn" value="Enviar a Whatsapp" onclick="mandarwpp(event)"></li>
+                <li><img class="icon" src="img/email.png" alt=""><br><input class="btn"type="submit" name="enviar" id="btn" value="Enviar a Email" onclick="mandarmail(event)"></li>
+                </ul>
+		    </div>
+        </form>
+    </main>
+</body>
+<script src="script-dagv.js"></script>
+</html>
