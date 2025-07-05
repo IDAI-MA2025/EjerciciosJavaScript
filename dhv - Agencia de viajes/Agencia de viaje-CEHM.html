@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>TRAVEL in STYLE - AGENCY</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 90%;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #1a73e8;
+        }
+        .section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .box {
+            width: 48%;
+            background-color: #e8f0fe;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        label, input, select {
+            display: block;
+            margin: 5px 0;
+        }
+        input[type="number"] {
+            width: 60px;
+        }
+        .center {
+            text-align: center;
+            margin-top: 20px;
+        }
+        h3 {
+            color: #d93025;
+            text-align: center;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>TRAVEL in STYLE</h1>
+    <h2>-- AGENCY --</h2>
+    <form id="formulario">
+        <label>NOMBRE: <input type="text" name="nombre"></label>
+        <label>TELEFONO: <input type="text" name="telefono"></label>
+        <label>EMAIL: <input type="email" name="email"></label>
+        <label>DIRECCION: <input type="text" name="direccion"></label>
+        <h3>TODOS LOS PRECIOS ESTAN EN DOLARES</h3>
+
+        <div class="section">
+            <div class="box">
+                <strong>CRUCEROS (por persona)</strong><br>
+                <label><input type="radio" name="crucero" value="0"> SIN CRUCERO 0.00</label>
+                <label><input type="radio" name="crucero" value="2879"> SUDAMERICA COLORIDA (16 DÍAS) 2,879.00</label>
+                <label><input type="radio" name="crucero" value="3454"> EUROPA DE ENSUEÑO (27 DÍAS) 3,454.00</label>
+                <label><input type="radio" name="crucero" value="1840"> ASIA DE TRADICIONES (19 DÍAS) 1,840.00</label>
+                <label><input type="radio" name="crucero" value="1069"> AVENTURA CARIBEÑA (15 DÍAS) 1,069.00</label>
+                <label><input type="radio" name="crucero" value="1237"> DESCUBRIENDO ALASKA (11 DÍAS) 1,237.00</label>
+
+                <strong>EXTRAS (por persona adulta)</strong><br>
+                <label><input type="checkbox" name="extras" value="300"> Bebidas Alcohólicas +300.00</label>
+                <label><input type="checkbox" name="extras" value="150"> Clases de Buceo +150.00</label>
+                <label><input type="checkbox" name="extras" value="500"> 3 Tours de Expedición +500.00</label>
+                <label><input type="checkbox" name="extras" value="100"> Paquete de Fotografías +100.00</label>
+                <label><input type="checkbox" name="extras" value="250"> Pesca en Altamar +250.00</label>
+
+                <label>NUMERO DE ADULTOS:
+                    <select name="adultos" id="adultos">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </label>
+                <label>NUMERO DE NIÑOS:
+                    <select name="ninos" id="ninos">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </label>
+            </div>
+            <div class="box">
+                <strong>SERVICIOS ADICIONALES</strong><br>
+                <label>Transporte (por persona)</label>
+                <label><input type="radio" name="transporte" value="0"> Sin Avión +0.00</label>
+                <label><input type="radio" name="transporte" value="100"> Avión SOLO IDA +100.00</label>
+                <label><input type="radio" name="transporte" value="150"> Avión IDA y VUELTA +150.00</label>
+
+                <label>Hotel (cuota por día)</label>
+                <label><input type="radio" name="hotel" value="0"> Sin Hotel +0.00</label>
+                <label><input type="radio" name="hotel" value="100"> Habitación Sencilla +100.00</label>
+                <label><input type="radio" name="hotel" value="150"> Habitación Doble +150.00</label>
+                <label><input type="radio" name="hotel" value="250"> Habitación Suite +250.00</label>
+                <label>Número de días de Hotel: <input type="number" name="dias_hotel" id="dias_hotel" min="0" value="0"></label>
+
+                <label>Estacionamiento (por día de hotel)</label>
+                <label><input type="radio" name="estacionamiento" value="0"> Sin Estacionamiento +0.00</label>
+                <label><input type="radio" name="estacionamiento" value="10"> Con Estacionamiento +10.00</label>
+            </div>
+        </div>
+
+        <div class="center">
+            <button type="button" onclick="calcularPresupuesto()">Calcular Presupuesto</button>
+            <p><strong>PRESUPUESTO DE VIAJE: </strong><span id="dolares">0</span> <em>(DOLARES)</em></p>
+            <p><strong>PRESUPUESTO DE VIAJE: </strong><span id="pesos">0</span> <em>(PESOS)</em></p>
+            <p><strong>PRESUPUESTO DE VIAJE: </strong><span id="euros">0</span> <em>(EUROS)</em></p>
+        </div>
+    </form>
+
+    <script>
+        function calcularPresupuesto() {
+            const adultos = parseInt(document.getElementById("adultos").value);
+            const ninos = parseInt(document.getElementById("ninos").value);
+            const personas = adultos + ninos;
+
+            const crucero = parseFloat(document.querySelector("input[name='crucero']:checked")?.value || 0);
+            const transporte = parseFloat(document.querySelector("input[name='transporte']:checked")?.value || 0);
+            const hotel = parseFloat(document.querySelector("input[name='hotel']:checked")?.value || 0);
+            const diasHotel = parseInt(document.getElementById("dias_hotel").value || 0);
+            const estacionamiento = parseFloat(document.querySelector("input[name='estacionamiento']:checked")?.value || 0);
+
+            let extrasTotal = 0;
+            document.querySelectorAll("input[name='extras']:checked").forEach(el => {
+                extrasTotal += parseFloat(el.value);
+            });
+
+            const costoCrucero = crucero * personas;
+            const costoTransporte = transporte * personas;
+            const costoHotel = hotel * diasHotel * personas;
+            const costoEstacionamiento = estacionamiento * diasHotel;
+            const costoExtras = extrasTotal * adultos;
+
+            const totalUSD = costoCrucero + costoTransporte + costoHotel + costoEstacionamiento + costoExtras;
+            const totalMXN = totalUSD * 21;
+            const totalEUR = totalUSD * 0.87; // aprox 1 USD = 0.87 EUR
+
+            document.getElementById("dolares").textContent = totalUSD.toFixed(2);
+            document.getElementById("pesos").textContent = totalMXN.toFixed(2);
+            document.getElementById("euros").textContent = totalEUR.toFixed(2);
+        }
+    </script>
+</body>
+</html>
