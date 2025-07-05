@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel in Style - Agencia de Viajes</title> <link rel="stylesheet" href="dhv.css">
+</head>
+<body>
+
+    <header class="encabezado-principal">
+        <div class="contenido-encabezado">
+            <div class="logo-encabezado">
+                <img src="dhv-img/Logo - agencia (1).png" alt="Imagen de Viaje"> </div>
+            <div class="titulo-encabezado">
+                <h1>TRAVEL in STYLE</h1>
+                <h2>- AGENCIA -</h2>
+                <p>Tu pase al mundo</p>
+            </div>
+        </div>
+        
+        <div class="lista">
+            <p>CRUCEROS</p>
+            <p>TOURS</p>
+            <p>PLAYAS</p>
+            <p>CIUDADES</p>
+       </div>
+
+       <br>
+    </header>
+
+    <div class="info-usuario">
+        <label for="nombre">NOMBRE:</label>
+        <input type="text" id="nombre" name="nombre">
+        <label for="telefono">TELEFONO:</label>
+        <input type="text" id="telefono" name="telefono">
+        <label for="email">EMAIL:</label>
+        <input type="email" id="email" name="email">
+        <label for="direccion">DIRECCION:</label>
+        <input type="text" id="direccion" name="direccion">
+    </div>
+
+    <br><br>
+
+    <div class="aviso-precios">
+        <h3>TODOS LOS PRECIOS ESTAN EN DOLARES</h3>
+    </div>
+
+    <br>
+
+    <div class="contenedor">
+        <main class="caja">
+            <section class="caja-cruceros">
+                <hr>
+                <h3>CRUCEROS (por persona)</h3>
+                <label for="crucero-sin"><input type="radio" name="radio-crucero" id="crucero-sin" value="0.00" checked>Sin crucero (0.00)</label>
+                <label for="crucero-sudamerica"><input type="radio" name="radio-crucero" id="crucero-sudamerica" value="2879.00">Sudamerica colorida - 16 dias (2,879.00)</label>
+                <label for="crucero-europa"><input type="radio" name="radio-crucero" id="crucero-europa" value="3454.00">Europa de ensueño - 27 dias (3,454.00)</label>
+                <label for="crucero-asia"><input type="radio" name="radio-crucero" id="crucero-asia" value="1840.00">Asia de tradiciones - 19 dias (1,840.00)</label>
+                <label for="crucero-caribe"><input type="radio" name="radio-crucero" id="crucero-caribe" value="1069.00">Aventura caribeña - 15 dias (1,069.00)</label>
+                <label for="crucero-alaska"><input type="radio" name="radio-crucero" id="crucero-alaska" value="1237.00">Descubriendo alaska - 11 dias (1,237.00)</label>
+
+                <hr>
+
+                <h3>EXTRAS (por persona adulta)</h3>
+                <label for="extra-bebidas"><input type="checkbox" id="extra-bebidas" name="extras" value="300.00"> Bebidas alcoholicas (+300)</label>
+                <label for="extra-buceo"><input type="checkbox" id="extra-buceo" name="extras" value="150.00"> Clases de buceo (+150)</label>
+                <label for="extra-expedicion"><input type="checkbox" id="extra-expedicion" name="extras" value="500.00"> 3 tours de expedicion (+500)</label>
+                <label for="extra-fotografia"><input type="checkbox" id="extra-fotografia" name="extras" value="100.00"> Paquete de fotografias (+100)</label>
+                <label for="extra-pesca"><input type="checkbox" id="extra-pesca" name="extras" value="250.00"> Pesca en altamar (+250)</label>
+
+                <hr>
+
+                <div class="cantidad-personas">
+                    <label for="numAdultos">NUMERO DE ADULTOS:</label>
+                    <input type="number" id="numAdultos" value="1" min="0">
+                    <br>
+                    <br>
+                    <label for="numNinos">NUMERO DE NIÑOS:</label>
+                    <input type="number" id="numNinos" value="0" min="0"> </div>
+                <hr>
+            </section>
+
+            <section class="caja-servicios">
+                <hr>
+                <h3>Transporte (por persona)</h3>
+                <label for="transporte-sin"><input type="radio" name="transporte" id="transporte-sin" value="0.00" checked> Sin Avion (0.00)</label>
+                <label for="transporte-ida"><input type="radio" name="transporte" id="transporte-ida" value="100.00"> Avion SOLO IDA (100.00)</label>
+                <label for="transporte-idayvuelta"><input type="radio" name="transporte" id="transporte-idayvuelta" value="150.00"> Avion IDA y Vuelta (150.00)</label>
+
+                <hr>
+
+                <h3>Hotel (cuota por dia)</h3>
+                <label for="hotel-sin"><input type="radio" name="hotel" id="hotel-sin" value="0.00" checked> Sin Hotel (0.00)</label>
+                <label for="hotel-sencilla"><input type="radio" name="hotel" id="hotel-sencilla" value="100.00"> Habitacion Sencilla (+100)</label>
+                <label for="hotel-doble"><input type="radio" name="hotel" id="hotel-doble" value="150.00"> Habitacion Doble (+150)</label>
+                <label for="hotel-suite"><input type="radio" name="hotel" id="hotel-suite" value="250.00"> Habitacion Suite (+250)</label>
+
+                <br>
+                <div class="cantidad-dias">
+                    <label for="numDiasHotel">Numero de dias de Hotel:</label>
+                    <input type="number" id="numDiasHotel" value="1" min="0">
+                </div>
+                <hr>
+        
+                <h3>Estacionamiento (por dia de Hotel)</h3>
+                <label for="estacionamiento-sin"><input type="radio" name="estacionamiento" id="estacionamiento-sin" value="0.00" checked> Sin Estacionamiento (0.00)</label>
+                <label for="estacionamiento-con"><input type="radio" name="estacionamiento" id="estacionamiento-con" value="10.00"> Con Estacionamiento (+10.00)</label>
+
+                <hr>
+            </section>
+        </main>
+    </div>
+
+    <div class="contenedor-cotizacion">
+        <footer>
+            <section class="caja-cotizacion">
+                <h3>PRESUPUESTO DEL VIAJE</h3>
+                <div class="monedas-horizontal">
+                    <div class="total-viaje">
+                        <label for="total-usd">DOLARES (21 MXN)</label>
+                        <div class="ttl" id="total-usd">0.00</div>
+                    </div>
+
+                    <div class="total-viaje">
+                        <label for="total-mxn">PESOS</label>
+                        <div class="ttl" id="total-mxn">0.00</div>
+                    </div>
+
+                    <div class="total-viaje">
+                        <label for="total-eur">EUROS (26 MXN)</label>
+                        <div class="ttl" id="total-eur">0.00</div>
+                    </div>
+                </div> 
+                <button class="btn-enviar-cotizacion" id="btnEnviarCotizacion">Enviar Cotización</button>
+            </section>
+        </footer>
+    </div>
+
+    <script src="dhv.js"></script>
+    
+</body>
+</html>
