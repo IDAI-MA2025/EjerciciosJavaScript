@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo Telefonico</title>
+
+    <style>
+        body {
+            background-color: rgb(255, 226, 37)
+        }
+
+        h1 {
+            font: "broadway";
+        }
+
+        label {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+        }
+
+        .contenedor{
+            width: 350px;
+            height: 800px;
+            background-color: rgb(255, 226, 37);
+            margin: 50px;
+            align-content: center;
+            display: flex;
+            text-align: center;
+            flex-direction: column;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- <form action=""></form> -->
+    <div class="contenedor">
+    <form id="calculoMinutos" action="ReciboTelefonico(JS).html" method="GET">
+        <h1>Recibo Telefonico</h1>
+        <label for="" >Minutos de celular (10.00 MXN c/u)</label>
+        <br>
+        <input type="number" id="minCel" value="100">
+
+        <hr>
+        <label for="">Tipo de Plan</label>
+        <br>
+        <input type="radio" name="plan" value="tel">Solo teléfono (100 MX)<br>
+        <input type="radio" name="plan" value="internet">Teléfono + Internet (200 MX)<br>
+        <input type="radio" name="plan" value="tv">Teléfono + Internet + TV (300 MX)<br>
+
+        <hr>
+        <label for="">Tipo de Plan</label>
+        <br>
+        <input type="checkbox" name="Antivirus">Antivirus (50 MXN)<br>
+        <input type="checkbox" name="nube">Serivicio de Nube (150 MXN)<br>
+        <input type="checkbox" name="ws">Web Services(250 MXN)<br>
+
+        <hr>
+        <label for="">Paquetes</label>
+        <br>
+        <select name="">
+            <option value="residencial">Residencial</option>
+            <option value="pyme">PYMES</option>
+            <option value="empresa">Empresas</option>
+        </select>
+
+        <hr>
+        <div class="result">
+			<input type="text" id="resultado"></p>
+		</div>	
+
+        <button type="button" onclick="calcular()">Calcular</button>
+
+    </form>
+</div>
+</body>
+
+<script>
+
+var formulario = document.getElementById("calculoMinutos");
+
+function calcular (){
+
+    var total = 0;
+var minCel = formulario.minCel.value;
+total = minCel*10;
+
+//CONDICONES ANIDADAS
+if(formulario.plan.value == "tel")
+{
+    total = total + 100;
+}
+
+else if (formulario.plan.value == "internet")
+{total = total + 200;}
+
+else if (formulario.plan.value == "tv")
+{
+    total = total + 300;
+}
+
+else{
+    alert("Seleccionar un Tipo de Plan");
+}
+
+//SIMPLES (CHECKBOX)
+
+if (formulario.antivirus.checked) {
+    total = total + 50
+}
+
+if (formulario.nube.checked) {
+    total = total + 150;
+}
+
+if (formulario.ws.checked) {
+    total = total + 250;
+}
+
+
+if(formulario.residencial.select){
+    total = total + 100;
+}
+
+if(formulario.pyme.select){
+    total = total + 400;
+}
+
+if(formulario.empresa.select){
+    total = total + 500;
+}
+
+
+formulario.resultado.value = total;
+
+}
+
+</script>
+
+</html>
