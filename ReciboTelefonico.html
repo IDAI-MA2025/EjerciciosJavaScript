@@ -34,9 +34,9 @@
         <hr>
         <label for="">Tipo de Plan</label>
         <br>
-        <input type="radio" name="plan">Solo teléfono<br>
-        <input type="radio" name="plan">Teléfono + Internet<br>
-        <input type="radio" name="plan">Teléfono + Internet + TV<br>
+        <input type="radio" name="plan" value="tel">Solo teléfono<br>
+        <input type="radio" name="plan" value="Internet">Teléfono + Internet<br>
+        <input type="radio" name="plan" value="TV">Teléfono + Internet + TV<br>
 
         <hr>
         <label for="">Tipo de Plan</label>
@@ -64,5 +64,35 @@
     </form>
 
 </body>
+<script>
+    var formulario = document.getElementById("calculoMinutos");
+
+
+    function calcular(){
+        var total = 0;
+        var minCel = formulario.minCel.value;
+        total = minCel * 10;
+        if (formulario.plan.value == "tel"
+
+        
+        
+{
+    total = total +100;
+}
+else if(formulario.plan.value == "tel")
+total = total + 100;
+    }
+
+    else if( formulario.plan.value == "internet")
+{
+    total = total + 200;
+ }
+
+  else if( formulario.plan.value == "TV")
+  {
+    total = total + 300;
+  }
+
+</script>
 
 </html>
