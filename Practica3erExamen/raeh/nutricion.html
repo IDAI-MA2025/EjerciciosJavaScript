@@ -116,13 +116,20 @@
                     consulta = document.getElementById('pareja').value;;
                 }
 
-                console.log(consulta);
+
 
                 let otros = document.getElementById('otros').value;
                 let receta = document.getElementById('receta').checked ? 1000 : 0;
                 let ejercicio = document.getElementById('ejercicio').checked ? 1000 : 0;
                 let revista = document.getElementById('revista').checked ? 150 : 0;
                 let pago = document.getElementById('pago').value;
+
+                console.log(consulta);
+                console.log(otros);
+                console.log(receta);
+                console.log(ejercicio);
+                console.log(revista);
+                console.log(pago);
 
                 if (consulta) {
                     let total = parseFloat(consulta) + parseFloat(otros) + receta + ejercicio + revista;
