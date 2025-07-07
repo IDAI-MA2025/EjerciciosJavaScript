@@ -1,0 +1,143 @@
+
+    body {
+      background: navy;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: white;
+    }
+
+    .contenedor {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .columna-foto{
+        padding: 0;
+        border-top: 0;
+        border-right: 10;
+        text-align: center;
+        align-items: center;
+    }
+    .columna {
+      flex: 1;
+      background: navy;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .franja-movimiento {
+      width: 100%;
+      overflow: hidden;
+      background-color: white;
+      color: navy;
+      font-size: 24px;
+      font-weight: bold;
+      white-space: nowrap;
+      box-sizing: border-box;
+    }
+
+    .franja-movimiento span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: mover 10s linear infinite;
+    }
+
+    @keyframes mover {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+    }
+
+    .fila-formulario {
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    }
+
+    .fila-formulario label {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    }
+
+    .columna-gris{
+    background-color: gray ;
+    flex: 1;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left;
+    }
+
+-----------
+h2 {
+  text-align: center;
+  color: yellow;
+}
+
+.presupuesto {
+  margin-top: 30px;
+  background-color: white;
+  color: black;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.presupuesto h3 {
+  margin: 5px 0;
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.05);
+}
+
+.btn-whatsapp-flotante {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 999;
+  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-whatsapp-flotante:hover {
+  transform: scale(1.1);
+  background-color: #1ebe5d;
+}
+
+.icono-wpp-flotante {
+  width: 30px;
+  height: 30px;
+}
+
+
