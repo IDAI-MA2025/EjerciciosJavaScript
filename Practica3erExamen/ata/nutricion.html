@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutricion</title>
+    <link rel="stylesheet" href="nutricion.js">
+    <style>
+        input[type="submit"]{
+			padding: 15px 40px;
+			background: #f1b08490;
+			border: none;
+			font-size: 15px;
+			font-weight: 600;
+			text-transform: uppercase;
+			cursor: pointer;
+			transition: all 0.3s;
+		}
+    </style>
+</head>
+
+    <body bgcolor="#FFFFFF">
+		
+		<img src="../ata/3-nutri.jpg" width=100%><br>
+        <img src="../ata/nutri1.jpg" width=100%> 
+		<br>
+		<font color="#FFE4C4" size=5> <b>Servicios </b></font>
+        <font color="grey">
+        <ul>
+            <li>Control de peso</li>
+            <li>Prevención y tratamiento de enfermedades crónicas</li>
+        </ul>
+		<br>
+        Todas nuestras consultas incluyen análisis de composición corporal InBody, evaluación clínica nutricional, plan de alimentación individualizado, lista de productos recomendados, recomendaciones generales (ejercicio, estilo de vida, suplementación en caso necesario) y asesoría via Whatsapp.
+        <br>
+        *Todos nuestros paquetes tienen una vigencia de 6 meses a partir de la primera consulta
+        </font><br><br><br>
+		<form> 
+		<table  width="100%">
+		  <tr bgcolor="#FFE4C4"  align="center">
+                <td ><font size="4" color="FFFFFF"><b>Consulta online o presencial</b></font></td>
+                <td ><font size="4" color="FFFFFF"><b>Otros Servicios</b></font></td>
+                <td ><font size="4" color="FFFFFF"><b>Preparación</b></font></td>       
+          </tr>    
+          <tr>
+            <td>
+                <!-- CONSULTAS -->
+		        <input type="radio" name="consulta" value="850"><font color="grey">Primera Consulta $850 MXN<br>
+				<input type="radio" name="consulta" value="700">Seguimiento  $700 MXN<br>
+				<input type="radio" name="consulta" value="2000">Paquete de 3 Consultas  $2,000 MXN<br>
+				<input type="radio" name="consulta" value="5000">Paquete  pareja  $5,000 MXN<br>
+                </font>
+            </td>
+            <td>
+              <!-- ANÁLISIS -->
+			  <select id="analisis">
+				<option value="200">Análisis de Composición corporal Sin consulta +  $200</font></option>
+				<option value="1000"><font color="grey">Análisis de Composición corporal con consulta +  $1000</font></option>
+			  </select>
+                
+			</td>
+			<td>
+                <!-- EXTRAS -->
+			   <font color="grey">
+		        <input type="checkbox" class="extra" value="1000">Recetas $1,000<br>
+				<input type="checkbox" class="extra" value="1000">Ejercicios  $1,000<br>
+				<input type="checkbox" class="extra" value="150">Revista semanal $150<br>
+                </font>
+			</td>
+		</tr>	
+      </table>
+      <table>
+		<tr align="center">
+          <img src="../ata/nutri 2.jpg" width=100%>   
+        </tr>
+      </table>
+      <table width="70%" align="center">
+  <tr bgcolor="#FFE4C4" align="center">
+    <th><font color="white" size="3">AGENDA TU CITA</font><br></th>
+    <th><font size="3" color="white">TIPO DE PAGO</font><br></th>
+    <th><font size="3" color="white">¿REQUIERE FACTURA?</font><br></th>
+  </tr>
+  <tr>
+    <td>
+      Nombre <input type="text" size="25"><br>
+      Domicilio <input type="text" size="25"><br>
+    </td>
+    <td>
+        <!-- TIPO DE PAGO -->
+      <select id="pago">
+        <option value="0">Efectivo  +0%</option>
+        <option value="0.06">Tarjeta de Crédito o Débito +6%</option>
+        <option value="0.03">Transferencia Electrónica +3%</option>
+      </select>
+    </td>
+    <td>
+        <!-- FACTURA -->
+      <select id="factura">
+        <option value="">Selecciona</option>
+        <option value="sí">Sí</option>
+        <option value="no">No</option>
+      </select>
+    </td>
+  </tr>
+</table>
+<div class="btn" style="text-align: center; margin-top: 20px;">
+  <button type="button" onclick="calcularTotal()">Calcular</button>
+</div>
+<script>
+	function calcularTotal() {
+		let total = 0;
+
+		const consulta = document.querySelector('input[name="consulta"]:checked');
+		if (!consulta) {
+			alert("Selecciona una opción de consulta");
+			return;
+		}
+		total += parseFloat(consulta.value);
+
+		const analisis = document.getElementById("analisis");
+		total += parseFloat(analisis.value);
+
+		const extras = document.querySelectorAll(".extra:checked");
+		extras.forEach(item => total += parseFloat(item.value));
+
+		const factura = document.getElementById("factura").value;
+		if (factura === "") {
+			alert("Debes seleccionar si requieres factura");
+			return;
+		}
+
+		const pago = parseFloat(document.getElementById("pago").value);
+		const recargo = total * pago;
+		const totalFinal = total + recargo;
+
+		alert("Total a pagar: $" + totalFinal.toFixed(2) + " MXN");
+	}
+	</script>
+</body>
+</html>
