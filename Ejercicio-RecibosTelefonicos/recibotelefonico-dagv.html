@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo Telefonico</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        form {
+			background-color: #FFE699;
+			width: 325px;
+			height: 500px;
+			margin: auto;
+			margin-top: 50px;
+			padding: 15px 15px 15px 15px;
+			border: 3px black solid;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+        .btn{
+			display: flex;
+			justify-content: center;
+		}
+        button {
+			padding:5px 15px;
+			background: rgb(173, 173, 173);
+			border: none;
+			font-size: 15px;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: black;
+			border-radius: 5px;
+			cursor: pointer;
+			border: 1px solid black;
+		}
+        .uno{
+            text-transform: uppercase;
+            font-weight: 800;
+            color: black;
+        }
+        .dos{
+            text-transform: uppercase;
+            font-size: 18px;
+            color: black;
+        }
+        .box {
+            border: 1px black solid;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        input{background-color: #FFE699;
+        border: 1px black solid;}
+    </style>
+</head>
+<body>
+    <form id="calculoMinutos" action="recibotelefonico-dagv.html" method="GET">
+        <div>
+            <p class="uno">Recibo Telefónico</p>
+            <label for="number">Minutos de Celular ($10.00 MXN c/u)</label>
+            <input type="number" id="minCel" value="100" required><br>
+            <br>
+            <label class="dos" for="">Tipo de Plan</label><br>
+                <input type="radio" name="plan" value="tel">Solo teléfono ($100.00 MXN)<br>
+                <input type="radio" name="plan" value="telin">Teléfono + Internet ($200.00 MXN)<br>
+                <input type="radio" name="plan" value="telintv">Teléfono + Internet + TV ($300.00 MXN)<br>
+            <br>
+            <label class="dos" for="">Otros servicios</label><br>
+                <input type="checkbox" name="antivirus">Antivirus ($50.00 MXN)<br>
+                <input type="checkbox" name="nube">Servicio de nube ($150.00 MXN)<br>
+                <input type="checkbox" name="ws">Web Services ($250.00 MXN)<br>
+            <br>
+            <label class="dos" for="">Paquetes</label><br>
+            <select name="paquetes">
+                <option value="residencial">Residencial</option>
+                <option value="pyme">PYMES</option>
+                <option value="empresa">Empresas</option>
+        </select><br>
+        <br>
+        <div class="result">
+			<input type="text" id="resultado"></p>
+		</div>	
+		</div>
+
+		<div class="btn">
+			<button type="button" onclick="calcular()">Calcular</button>	
+		</div>
+    </form>
+</body>
+<script>
+        var formulario = document.getElementById("calculoMinutos");
+        
+        function calcular(){
+        var total = 0;
+        var minCel= formulario.minCel.value;
+        total = minCel * 10;
+            
+        
+        if (formulario.plan.value == "tel"){
+            total = total + 100;
+        }
+        else if (formulario.plan.value == "telin"){
+            total = total + 200;
+        }
+        else if (formulario.plan.value == "telintv"){
+            total = total + 300;
+        }
+        else{alert("Selaccionar un Tipo de Plan")}
+
+        if (formulario.antivirus.checked){
+            total = total + 50;
+        }
+        if (formulario.nube.checked){
+            total = total + 150;
+        }
+        if (formulario.ws.checked){
+            total = total + 250;
+        }
+        if (formulario.paquetes.value == "residencial"){
+            total = total + 300;
+        }
+        else if (formulario.paquetes.value == "pyme"){
+            total = total + 400;
+        }
+        else if (formulario.paquetes.value == "empresa"){
+            total = total + 500;
+        }
+        else{alert("Selaccionar un Paquete")}
+
+        formulario.resultado.value = "Total a pagar: $" + total + "MXN";
+    }
+       </script>
+</html>

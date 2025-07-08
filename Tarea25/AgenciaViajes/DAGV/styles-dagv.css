@@ -1,0 +1,105 @@
+body{
+    background-color: darkblue;
+    color: #FFFFFF;
+    font-family: 'Courier New', Courier, monospace;
+}
+h1 {
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    font-weight: 800;
+    margin: 20px;
+}
+marquee {
+    color: darkblue;
+    background-color: white;
+    font-size: 30px;
+    text-align: center;
+    font-weight: 1000;
+}
+.uno {
+    color: lightblue;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 800;
+    margin: 10px;
+}
+.dos {
+    color: lightblue;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 600;
+    margin: 0px;
+}
+img {
+    width: 400px;
+}
+.tres {
+    width: 100%;
+}
+ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.datos {
+    border: #FFFFFF solid 1px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cuatro {
+    color: rgb(248, 248, 93);
+    font-size: 25px;
+    text-align: center;
+    font-weight: 800;
+    margin: 0px;
+}
+.cinco{
+    width: 80%;
+    margin: auto;
+    background-color: gray;
+    padding: 5px;
+}
+.seis {
+    color: darkblue;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0px;
+}
+
+.siete {
+    width: 50%;
+}
+.ocho {
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 800;
+    margin: 0px;
+}
+.enviar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.btn {
+	padding: 15px 40px;
+	background: white;
+	border: none;
+	font-size: 15px;
+	font-weight: 600;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: all 0.3s;
+	border-radius: 15px;
+	}
+.btn:hover {
+    background: gray;
+}
+.icon {
+    width: 150px;
+    height: 150px;
+}

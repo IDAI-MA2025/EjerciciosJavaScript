@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recibo Telefónico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #fff;
+            width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #e05c0f;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input[type="number"], select, input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .opcion {
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #000;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #e05c0f;
+        }
+
+        .result {
+            margin-top: 15px;
+        }
+
+        .result input {
+            background-color: #eaeaea;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Recibo Telefónico</h1>
+        <form id="calculominutos">
+            
+            <fieldset>
+                <legend>Minutos de celular ($10.00 c/u)</legend>
+                <input type="number" id="minCel" value="100">
+            </fieldset>
+
+            <fieldset>
+                <legend>Tipo de Plan</legend>
+                <div class="opcion"><input type="radio" name="plan" value="tel" id="planTel"><label for="planTel">Solo teléfono (100 MX)</label></div>
+                <div class="opcion"><input type="radio" name="plan" value="internet" id="planInt"><label for="planInt">Teléfono + Internet (200 MX)</label></div>
+                <div class="opcion"><input type="radio" name="plan" value="tv" id="planTV"><label for="planTV">Teléfono + Internet + TV (300 MX)</label></div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Otros Servicios</legend>
+                <div class="opcion"><input type="checkbox" id="antivirus"><label for="antivirus">Antivirus (50 MX)</label></div>
+                <div class="opcion"><input type="checkbox" id="nube"><label for="nube">Servicio de Nube (150 MX)</label></div>
+                <div class="opcion"><input type="checkbox" id="ws"><label for="ws">Web Services (250 MX)</label></div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Paquetes</legend>
+                <select id="paquetes">
+                    <option value="residencial">Residencial (200 MX)</option>
+                    <option value="pyme">PYMES (300 MX)</option>
+                    <option value="empresa">Empresas (400 MX)</option>
+                </select>
+            </fieldset>
+
+            <div class="result">
+                <label>Total (MXN):</label>
+                <input type="text" id="resultado" readonly>
+            </div>
+
+            <button type="button" onclick="calcular()">Calcular</button>
+
+        </form>
+    </div>
+
+    <script>
+        function calcular() {
+            let total = 0;
+            let minCel = document.getElementById("minCel").value;
+            total += parseInt(minCel) * 10;
+
+            let plan = document.querySelector('input[name="plan"]:checked');
+            if (!plan) {
+                alert("Selecciona un tipo de plan.");
+                return;
+            }
+
+            if (plan.value === "tel") total += 100;
+            else if (plan.value === "internet") total += 200;
+            else if (plan.value === "tv") total += 300;
+
+            if (document.getElementById("antivirus").checked) total += 50;
+            if (document.getElementById("nube").checked) total += 150;
+            if (document.getElementById("ws").checked) total += 250;
+
+            let paquete = document.getElementById("paquetes").value;
+            if (paquete === "residencial") total += 200;
+            else if (paquete === "pyme") total += 300;
+            else if (paquete === "empresa") total += 400;
+
+            document.getElementById("resultado").value = "$ " + total.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

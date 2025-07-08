@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segundo parcial IDAI</title>
+    <style>
+        body{
+            background-color: aliceblue;
+            display: flex;
+            justify-content: center;
+        }
+        .contenedor{
+            background-color: rgb(255, 213, 76);
+            width: 30%;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+        }
+        .items{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .c1{
+            border: 5px solid black;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .Minutos{
+            background-color: aqua;
+        }
+        button{
+            align-self: center;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor c1">
+        <div class="items">
+            <form id="calculoMinutos" action="ReciboTelefonico-RAHG.html">
+                <h1>Recibo de telefono</h1>
+                <label for="Minutos">
+                    Minutos ($10.00c/u):
+                </label>
+                <br>
+                <input type="number" id="Minutos" value="1">
+                <hr>
+                <h2>Tipo de plan</h2>
+                <input type="radio" name="Plan" value="Telefono">Solo telefono(100 MXN)<br>
+                <input type="radio" name="Plan" value="Internet">Telefono + Internet(200 MXN)<br>
+                <input type="radio" name="Plan" value="TV">Telefono + Internet + TV(300 MXN) <br>
+                <hr>
+                <h2>Otros servicios</h2>
+                <input type="checkbox" name="Antivirus"> Antivirus(50 MXN)<br>
+                <input type="checkbox" name="Nube"> Nube (150 MXN)<br>
+                <input type="checkbox" name="Web"> WebService (250 MXN)<br>
+                <h2>Paquetes</h2>
+                <select name="Multiples">
+                    <option value="residencial">RESIDENCIAL</option>
+                    <option value="pymes">PYMES</option>
+                    <option value="empresas">EMPRESAS</option>
+                </select>
+                <hr>
+                <h2>Resultado</h2>
+                <div class="result">
+                    <input type="text" id="resultado"></p>
+                </div>
+                <br>
+                <button type="button" onclick="calcular()">Calcular</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    var formulario = document.getElementById("calculoMinutos");
+    function calcular() {
+        var total = 0;
+        var Minutos = formulario.Minutos.value;
+
+        total = Minutos * 10;
+
+        //Condiciones anidadas
+        if(formulario.Plan.value == "Telefono")
+        {
+            total= total+100;
+        }
+        else if(formulario.Plan.value == "Internet")
+        {
+            total=total+200;
+        }
+        else if(formulario.Plan.value == "TV")
+        {
+            total = total + 300;
+        }
+        else{
+            alert("Seleccione un tipo de plan");
+            return;
+        }
+        
+        //condiciones simples
+        if (formulario.Antivirus && formulario.Antivirus.checked) {
+            total += 50;
+        }
+        if (formulario.Nube && formulario.Nube.checked) {
+            total += 150;
+        }
+        if (formulario.Web && formulario.Web.checked) {
+            total += 250;
+        }
+        formulario.resultado.value = total;
+    }
+</script>
+</html>

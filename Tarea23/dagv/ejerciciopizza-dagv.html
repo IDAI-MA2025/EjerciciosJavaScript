@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Pizza</title>
+    <link rel="stylesheet" href="estilos-dagv.css">
+    <script src="script-dagv.js"></script>
+</head>
+<body>
+    <header>
+        <div class="cuatro"></div>
+    </header>
+    <main>
+    <hr color="red" size="3">
+    <form id="calculopizzas" action="ejerciciopizza-dagv.html" method="GET">
+        <table>
+        <tr>
+            <td>
+                <label class="uno" for="number">Cantidad: </label>
+                <input class="dos" type="number" id="cant" value="1" min="1" max="999">
+
+                <hr color="white" size="2" width="90%">
+
+                <label class="uno" for="">Tamaño: </label><br>
+                <input type="radio" name="size" value="p">Personal<br>
+                <input type="radio" name="size" value="c">Chica<br>
+                <input type="radio" name="size" value="m">Mediana<br>
+                <input type="radio" name="size" value="f">Familiar<br>
+                <input type="radio" name="size" value="s">Suprema<br>
+
+                <hr color="white" size="2" width="90%">
+
+                <label class="uno" for="">Tipo de pan:  </label><br>
+                <input type="radio" name="type" value="n">Normal<br>
+                <input type="radio" name="type" value="d">Delgada<br>
+                <input type="radio" name="type" value="pp">Pan Pizza<br>
+                <input type="radio" name="type" value="hc">Hut Chesse<br>
+                <br>
+            </td>
+            <td>
+                <label class="uno" for="">Ingredientes: </label><br>
+                <input type="checkbox" name="ja">Jamón<br>
+                <input type="checkbox" name="pe">Peperoni<br>
+                <input type="checkbox" name="to">Tocino<br>
+                <input type="checkbox" name="cha">Champiñones<br>
+                <input type="checkbox" name="cho">Chozio Español<br>
+                <input type="checkbox" name="pi">Piña<br>
+                <input type="checkbox" name="sa">Salami<br>
+                <input type="checkbox" name="ac">Aceitunas<br>
+                
+                <hr color="white" size="2" width="90%">
+
+                <br>
+                <label class="uno" for="">Especiales: </label><br>
+                <select name="especiales">
+                <option value="no">No</option>
+                <option value="ma">Margarita</option>
+                <option value="4q">4 Quesos</option>
+                <option value="ha">Hawaiana</option>
+                <option value="na">Napolitana</option>
+                <option value="ny">New York</option>
+                </select>
+
+                </form>
+                <hr color="white" size="2" width="90%">
+                <hr color="white" size="2" width="90%">
+                <form id="buffet" action="ejerciciopizza-dagv.html" method="GET">
+                <label class="uno" for="">¿Quieres Buffet? </label>
+                <select name="active">
+                <option value="no">No</option>
+                <option value="si">Si</option>
+                </select><br>
+                </form>
+                <form id="buffet2">
+                <label for="adultos">Número de Adultos: </label>
+                <input class="dos"  type="number" id="noa" value="" required min="1" max="999"><br>
+                <label for="niños">Número de Niños: </label>
+                <input class="dos" type="number" id="non" value="" required min="1" max="999"> <br>
+                </form>
+            </td>
+            <td>
+                <img src="img/logo.png"  width="90% ">
+                <hr color="black" size="2" width="90%">
+                <p class="tres">keep calm and eat pizza</p>
+                <hr color="white" size="2" width="90%">
+                <hr color="white" size="2" width="90%">
+                <div class="result">
+                <p class="uno center">Total a pagar: <input class="cinco" type="text" id="resultado"></p>
+		        </div>	  
+            </td>
+        </tr>
+        </table>
+    <hr color="red" size="3">
+    </main>
+    <footer>
+        <div class="cuatro"></div>
+    </footer>
+</body>
+</html>
+

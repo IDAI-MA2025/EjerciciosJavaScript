@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viajes</title>
+     <link rel="stylesheet" href="viajes-GASL.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+    <hr>
+
+    <div class="contenedor">
+        <div class="columna-foto">
+            <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8" alt="Avión volando" height="250" width="500">
+
+        </div>
+
+        <div class="columna">
+            <h1><strong>TRAVEL in STYLE</strong></h1>
+            <h2><strong>AGENCY</strong></h2>
+            <hr>
+            <div class="franja-movimiento">
+            <span>Tu pase al mundo</span>
+            </div>
+            <hr>
+            <b style="color: lightblue;">Cruceros, tours, playas, ciudades, ....</b>
+
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="fila-formulario">
+    <hr>
+    <label for="nombre">Nombre: <input type="text" id="nombre" required></label>
+    <label for="email">Email: <input type="email" id="email" required></label>
+    <label for="telefono">Teléfono: <input type="tel" id="telefono" required></label>
+    <label for="direccion">Dirección: <input type="text" id="direccion"></label>
+    <hr>
+    </div>
+
+
+
+        <h2 style="text-align: center; color: yellow;">TODOS LOS PRECIOS ESTÁN EN DOLARES</h2>
+        <hr>
+     
+
+    <div class="contenedor">
+    <div class="columna-gris">
+
+<strong>CRUCEROS (por persona)</strong><br>
+  <label><input type="radio" name="crucero" value="0"> SIN CRUCERO 0.00</label><br>
+  <label><input type="radio" name="crucero" value="2879"> SUDAMERICA COLORIDA (16 DÍAS) 2,879.00</label><br>
+  <label><input type="radio" name="crucero" value="3454"> EUROPA DE ENSUEÑO (27 DÍAS) 3,454.00</label><br>
+  <label><input type="radio" name="crucero" value="1840"> ASIA DE TRADICIONES (19 DÍAS) 1,840.00</label><br>
+  <label><input type="radio" name="crucero" value="1069"> AVENTURA CARIBEÑA (15 DÍAS) 1,069.00</label><br>
+  <label><input type="radio" name="crucero" value="1237"> DESCUBRIENDO ALASKA (11 DÍAS) 1,237.00</label><br>
+<hr>
+  <br><strong>EXTRAS (por persona adulta)</strong><br>
+  <label><input type="checkbox" class="extra" value="300"> Bebidas Alcohólicas +300.00</label><br>
+  <label><input type="checkbox" class="extra" value="150"> Clases de Buceo +150.00</label><br>
+  <label><input type="checkbox" class="extra" value="500"> 3 Tours de Expedición +500.00</label><br>
+  <label><input type="checkbox" class="extra" value="100"> Paquete de Fotografías +100.00</label><br>
+  <label><input type="checkbox" class="extra" value="250"> Pesca en Altamar +250.00</label><br>
+<hr>
+  
+  <label>NÚMERO DE ADULTOS:
+    <select id="adultos">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+
+
+    </select>
+  </label><br>
+  <label>NÚMERO DE NIÑOS:
+    <select id="ninos">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+  </label>
+</div>
+
+<div class="columna-gris">
+  <strong>SERVICIOS ADICIONALES</strong><br><br>
+
+  <strong>Transporte (por persona)</strong><br>
+  <label><input type="radio" name="avion" value="0"> Sin Avión +0.00</label><br>
+  <label><input type="radio" name="avion" value="100"> Avión solo IDA +100.00</label><br>
+  <label><input type="radio" name="avion" value="150"> Avión IDA y Vuelta +150.00</label><br><br>
+    <hr>
+  <strong>Hotel (cuota por día)</strong><br>
+  <label><input type="radio" name="hotel" value="0"> Sin Hotel +0.00</label><br>
+  <label><input type="radio" name="hotel" value="100"> Habitación Sencilla +100.00</label><br>
+  <label><input type="radio" name="hotel" value="150"> Habitación Doble +150.00</label><br>
+  <label><input type="radio" name="hotel" value="250"> Habitación Suite +250.00</label><br>
+  <label>Número de días de hotel:
+    <input type="number" id="diasHotel" value="0" min="0">
+  </label><br><br>
+  <hr>
+  <strong>Estacionamiento (por día de hotel)</strong><br>
+  <label><input type="radio" name="parking" value="0"> Sin Estacionamiento +0.00</label><br>
+  <label><input type="radio" name="parking" value="10"> Con Estacionamiento +10.00</label>
+    </div>
+    </div>
+
+    <div class="contenedor">
+        <div class="columna">
+          <h3>PRESUPUESTO DE VIAJE:</h3>
+          <p>Dólares: <span id="dolares">0.00</span></p>
+          <p>Pesos (MXN): <span id="pesos">0.00</span></p>
+          <p>Euros: <span id="euros">0.00</span></p>
+        </div>
+
+    </div>
+
+<a href="javascript:void(0)" class="btn-whatsapp-flotante" onclick="enviarWhatsApp()" title="Enviar por WhatsApp">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="icono-wpp-flotante">
+</a>
+
+
+  
+<script src="viajes-GASL.js"></script>
+    
+</body>
+</html>

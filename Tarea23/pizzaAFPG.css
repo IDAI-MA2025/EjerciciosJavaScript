@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #C41E3A;
+}
+
+form{
+    max-width: 1200px;
+    padding: 20px;
+    gap: 20px;
+    background: #F4A460;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-template-areas: 
+                        "cantidad  ingredientes logo"
+                        "tamaño    ingredientes logo"
+                        "pan       especiales   logo"
+                        "pan         buffet     pago";
+}
+
+header{
+    grid-area: header;
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+.cantidad{
+    grid-area: cantidad;
+}   
+
+.tamaño{
+    grid-area: tamaño;
+}
+
+.tipodepan{
+    grid-area: pan;
+}
+
+.ingredientes{
+    grid-area: ingredientes;
+}
+
+.especiales{
+    grid-area: especiales;
+}
+
+.buffet{
+    grid-area: buffet;
+}
+
+.pago{
+    grid-area: pago;
+}
+
+.logo{
+    grid-area: logo;
+    width: 100px;
+    height: auto;
+    margin: 20px auto;
+}
+
+.type-grid{
+    display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    
+}
+
+.type-item{
+    display: flex;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="radio"], input[type="checkbox"] {
+            margin-right: 8px;
+            transform: scale(1.2);
+            accent-color: #D2401E;
+        }
+
+input[type="number"] {
+        width: 100px;
+        height: 70px;
+        padding: 5px;
+        border: 2px solid #228B22;
+        border-radius: 5px;
+        text-align: center;
+        font-weight: bold;
+        }
+
+select {
+        width: auto;
+        padding: 10px;
+        border: 2px solid #228B22;
+        border-radius: 5px;
+        background: white;
+        font-size: 1em;
+    }
+
+img.logo {
+    width: 100px;
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+button{
+    background-color: #f09d50;
+    color: white; 
+     padding: 10px 20px; 
+     border: none; 
+     border-radius: 5px; 
+     cursor: pointer;
+    font-size: 16px;
+}
+
+img.footer-logo {
+    width: auto;
+    height: 200px;
+    justify-items: center;
+    justify-content: center;
+}

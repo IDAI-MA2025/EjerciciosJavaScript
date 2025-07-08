@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pizza Personalizada</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff7e6;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .contenedor {
+      max-width: 700px;
+      margin: auto;
+      background: #fff3c4;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #e67e22;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    select, input[type="number"], button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #e67e22;
+      color: white;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #d35400;
+    }
+
+    .imagen {
+      width: 30%;
+      border-radius: 10px;
+      margin: 15px 0;
+      align-content: center;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>🍕 Arma tu Pizza</h1>
+    <img src="/imgName/ (2).jpg" alt="Pizza personalizada" class="imagen" />
+
+    <label for="tamano">Tamaño:</label>
+    <select id="tamano" class="opcion-config">
+      <option value="45">Personal ($45)</option>
+      <option value="90">Chica ($90)</option>
+      <option value="150">Mediana ($150)</option>
+      <option value="250">Familiar ($250)</option>
+      <option value="400">Suprema ($400)</option>
+    </select>
+    <img src="/imgName/OIP.jpg" alt="Tamaños de pizza" class="imagen" />
+
+    <label for="pan">Tipo de pan:</label>
+    <select id="pan" class="opcion-config">
+      <option value="0">Normal</option>
+      <option value="15">Delgada (+$15)</option>
+      <option value="20">Pan Pizza (+$20)</option>
+      <option value="30">Hut Cheese (+$30)</option>
+    </select>
+
+    <label>Ingredientes:</label>
+    <div id="ingredientes">
+      <input type="checkbox" value="10" class="opcion-config" /> Jamón
+      <input type="checkbox" value="10" class="opcion-config" /> Tocino
+      <input type="checkbox" value="10" class="opcion-config" /> Chorizo Español<br />
+      <input type="checkbox" value="15" class="opcion-config" /> Peperoni
+      <input type="checkbox" value="15" class="opcion-config" /> Champiñones
+      <input type="checkbox" value="15" class="opcion-config" /> Salami<br />
+      <input type="checkbox" value="5" class="opcion-config" /> Piña
+      <input type="checkbox" value="5" class="opcion-config" /> Aceitunas
+    </div>
+    <img src="/imgName/OIP (1).jpg " alt="Ingredientes para pizza" class="imagen" />
+
+    <label for="especial">Especial:</label>
+    <select id="especial" class="opcion-config">
+      <option value="0">Ninguna</option>
+      <option value="59">Margarita ($59)</option>
+      <option value="69">4 Quesos ($69)</option>
+      <option value="79">Hawaiana ($79)</option>
+      <option value="89">Napolitana ($89)</option>
+      <option value="99">New York ($99)</option>
+    </select>
+
+    <label for="buffet">¿Quieres Buffet?</label>
+    <select id="buffet" onchange="gestionarBuffet()">
+      <option value="no">NO</option>
+      <option value="si">SI</option>
+    </select>
+    <img src="R.jpg" alt="Buffet" class="imagen" />
+
+    <div id="buffetCampos" style="display: none;">
+      Adultos: <input type="number" id="adultos" value="0" /><br />
+      Niños: <input type="number" id="ninos" value="0" /><br />
+    </div>
+
+    <button onclick="calcularTotal()">Calcular Total</button>
+    <h3>Total: $<span id="total">0</span></h3>
+  </div>
+
+  <script>
+    function gestionarBuffet() {
+      const esBuffet = document.getElementById("buffet").value === "si";
+      const buffetCampos = document.getElementById("buffetCampos");
+      const configuraciones = document.querySelectorAll(".opcion-config");
+
+      buffetCampos.style.display = esBuffet ? "block" : "none";
+      configuraciones.forEach(el => el.disabled = esBuffet);
+    }
+
+    function calcularTotal() {
+      const esBuffet = document.getElementById("buffet").value === "si";
+
+      if (esBuffet) {
+        const adultos = parseInt(document.getElementById("adultos").value) || 0;
+        const ninos = parseInt(document.getElementById("ninos").value) || 0;
+        const total = (adultos * 250) + (ninos * 150);
+        document.getElementById("total").textContent = total;
+        return;
+      }
+
+      const tamano = parseInt(document.getElementById("tamano").value);
+      const pan = parseInt(document.getElementById("pan").value);
+      const especial = parseInt(document.getElementById("especial").value);
+
+      const ingredientes = document.querySelectorAll("#ingredientes input[type='checkbox']:checked");
+      let costoIngredientes = 0;
+      ingredientes.forEach(item => {
+        costoIngredientes += parseInt(item.value);
+      });
+
+      const total = tamano + pan + especial + costoIngredientes;
+      document.getElementById("total").textContent = total;
+    }
+  </script>
+</body>

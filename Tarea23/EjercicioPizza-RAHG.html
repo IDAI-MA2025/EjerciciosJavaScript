@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza</title>
+    <style>
+        body{
+            background-color: #F09201;
+        }
+        header{
+            display: flex;
+            justify-content: center;
+        }
+        footer{
+            display: flex;
+            justify-content: center;
+        }
+        .logorepetido{
+            height: 100px;
+            width: 100px;
+        }
+        .logoprincipal{
+            height: 400px;
+            width: 400px;
+            justify-content: center;
+        }
+        .contenedor{
+            background-color: #F09201;
+            width: 100%;
+            height: 600px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+        .items{
+            background-color: #F09201;
+			width: 30%;
+			height: 600px;
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+			text-align: left;
+        }
+        .resultadopizza {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            font-size: 18px;
+            width: 200px;
+        }
+        hr{
+            border: 1px solid rgb(255, 255, 255);
+        }
+        .lineas{
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+    </header>
+    <hr class="lineas">
+    <form id="calculopizza">
+        <div class="contenedor">
+            <div class="items">
+                <h1>Haga su pedido</h1>
+                <hr>
+                <label for="Pizzas">
+                    Cantidad de Pizzas:
+                </label>
+                <input type="number" id="Pizzas" value="1" min="1">
+                <hr>
+                <h1>Tamaño</h1>
+                <input type="radio" name="tamaño" value="personal">Personal ($45 MXN)<br>
+                <input type="radio" name="tamaño" value="chica">Chica ($90 MXN)<br>
+                <input type="radio" name="tamaño" value="mediana">Mediana ($150 MXN)<br>
+                <input type="radio" name="tamaño" value="familiar">Familiar ($250 MXN)<br>
+                <input type="radio" name="tamaño" value="suprema">Suprema ($400 MXN)<br>
+                <hr>
+                <h1>Tipo de pan</h1>
+                <input type="radio" name="pan" value="normal">Normal (No hay costo extra)<br>
+                <input type="radio" name="pan" value="delgada">Delgada ($15 MXN)<br>
+                <input type="radio" name="pan" value="panpizza">Pan pizza ($20 MXN)<br>
+                <input type="radio" name="pan" value="hutcheese">Hut cheese ($30 MXN)<br>
+            </div>
+            <div class="items">
+                <h1>Ingredientes</h1>
+                <input type="checkbox" name="ingredientes" value="jamon" >Jamon ($10 MXN)<br>
+                <input type="checkbox" name="ingredientes" value="peperoni">Peperoni ($15 MXN)<br>
+                <input type="checkbox" name="ingredientes" value="tocino">Tocino ($10 MXN)<br>
+                <input type="checkbox" name="ingredientes" value="champiñones">Champiñones ($15 MXN)<br>
+                <input type="checkbox" name="ingredientes" value="chorizo español">Chorizo Español ($10 MXN)<br>
+                <input type="checkbox" name="ingredientes" value="piña">Piña ($5 MXN)<br>
+                <input type="checkbox" name="ingredientes" value="salami">Salami ($15 MXN)<br>
+                <input type="checkbox" name="ingredientes" value="aceitunas">Aceitunas ($5 MXN)<br>
+                <hr>
+                <h2>Especiales</h2>
+                <select name="especial" id="especial">
+                    <option value="margarita">Margarita ($59 MXN)</option>
+                    <option value="4quesos">4 Quesos ($69 MXN)</option>
+                    <option value="hawaiana">Hawaiana ($79 MXN)</option>
+                    <option value="napolitana">Napolitana ($89 MXN)</option>
+                    <option value="newyork">New York ($99 MXN)</option>
+                </select>
+                <hr>
+                <h2>¿Quieres buffet?
+                    <select name="buffetSN" id="buffetSN">
+                        <option value="no">No</option>
+                        <option value="si">Si</option>
+                    </select>
+                </h2>
+                <label for="Adultos">
+                    Cantidad de adultos ($250 MXN c/u):
+                </label>
+                <input type="number" id="Adultos" value="1" min="0">
+                <br>
+                <label for="Niños">
+                    Cantidad de niños ($150 MXN c/u):
+                </label>
+                <input type="number" id="Niños" value="1" min="0">
+            </div>
+            <div class="items">
+            <img src="imgRAHG/PIZZARAHGLOGO.png" alt="Logo grande" class="logoprincipal">
+            <div class="resultadopizza">
+                <h2>Total a pagar
+                    <input type="text" id="resultadopizza" readonly>
+                </h2>
+            </div>
+            </div>
+        </div>
+    </form>
+    <hr class="lineas">
+    <footer>
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+        <img src="imgRAHG/PIZZARAHG.png" alt="Logopizza" class="logorepetido">
+    </footer>
+</body>
+<script>
+    const preciosTamaño = {
+        personal: 45,
+        chica: 90,
+        mediana: 150,
+        familiar: 250,
+        suprema: 400
+    };
+
+    const preciosPan = {
+        normal: 0,
+        delgada: 15,
+        panpizza: 20,
+        hutcheese: 30
+    };
+
+    const preciosIngredientes = {
+        jamon: 10,
+        peperoni: 15,
+        tocino: 10,
+        champiñones: 15,
+        "chorizo español": 10,
+        piña: 5,
+        salami: 15,
+        aceitunas: 5
+    };
+
+    const preciosEspeciales = {
+        margarita: 59,
+        "4quesos": 69,
+        hawaiana: 79,
+        napolitana: 89,
+        newyork: 99
+    };
+
+    function calcularTotal() {
+        let total = 0;
+        const buffet = document.getElementById("buffetSN").value;
+
+        if (buffet === "si") {
+            const adultos = parseInt(document.getElementById("Adultos").value) || 0;
+            const niños = parseInt(document.getElementById("Niños").value) || 0;
+            total = (adultos * 250) + (niños * 150);
+        } else {
+            const cantidad = parseInt(document.getElementById("Pizzas").value) || 0;
+
+            const tamaño = document.querySelector('input[name="tamaño"]:checked');
+            if (tamaño) total += preciosTamaño[tamaño.value] * cantidad;
+
+            const pan = document.querySelector('input[name="pan"]:checked');
+            if (pan) total += preciosPan[pan.value] * cantidad;
+
+            document.querySelectorAll('input[name="ingredientes"]:checked').forEach(chk => {
+                total += preciosIngredientes[chk.value] * cantidad;
+            });
+
+            const especial = document.getElementById("especial").value;
+            total += preciosEspeciales[especial] * cantidad;
+        }
+
+        document.getElementById("resultadopizza").value = "$" + total + " MXN";
+    }
+
+    function actualizarBuffetCampos() {
+        const buffet = document.getElementById("buffetSN").value;
+        const adultos = document.getElementById("Adultos");
+        const niños = document.getElementById("Niños");
+
+        if (buffet === "si") {
+            adultos.disabled = false;
+            niños.disabled = false;
+        } else {
+            adultos.disabled = true;
+            niños.disabled = true;
+        }
+    }
+
+    // Listeners
+    document.getElementById("calculopizza").addEventListener("input", calcularTotal);
+    document.getElementById("calculopizza").addEventListener("change", () => {
+        actualizarBuffetCampos();
+        calcularTotal();
+    });
+
+    // Inicializar al cargar
+    window.addEventListener("DOMContentLoaded", () => {
+        actualizarBuffetCampos();
+        calcularTotal();
+    });
+</script>
+</html>
