@@ -81,7 +81,7 @@
 		   </td>
            <td>
 			  <select name="pago" id="pago">
-				<option>Efectivo  +0%</option>
+				<option value="0">Efectivo  +0%</option>
 				<option value="0.06">Tarjeta de Credito o Debito +6%</option>
 				<option value="0.03">Transferencia Electronica + 3%</option>
 			   </select>
@@ -123,13 +123,6 @@
                 let ejercicio = document.getElementById('ejercicio').checked ? 1000 : 0;
                 let revista = document.getElementById('revista').checked ? 150 : 0;
                 let pago = document.getElementById('pago').value;
-
-                console.log(consulta);
-                console.log(otros);
-                console.log(receta);
-                console.log(ejercicio);
-                console.log(revista);
-                console.log(pago);
 
                 if (consulta) {
                     let total = parseFloat(consulta) + parseFloat(otros) + receta + ejercicio + revista;
