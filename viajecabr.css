@@ -1,0 +1,97 @@
+
+    body {
+      background: rgb(228, 173, 56);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      color: white;
+    }
+
+    .contenedor {
+      display: flex;
+     justify-content: space-between;
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .columna-foto{
+        padding: 0;
+        border-top: 0;
+        border-right: 10;
+        text-align: center;
+        align-items: center;
+    }
+    .columna {
+      flex: 1;
+      background: rgb(223, 155, 31);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .franja-movimiento {
+      width: 100%;
+      overflow: hidden;
+      background-color: white;
+      color: rgb(231, 158, 22);
+      font-size: 24px;
+      font-weight: bold;
+      white-space: nowrap;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .titulo {
+      
+      
+      text-align: center;
+     
+    }
+
+    @keyframes mover {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+    }
+
+    .fila-formulario {
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    }
+
+    .fila-formulario label {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: bold;
+    }
+
+    .columna-gris{
+    background-color: rgb(145, 123, 52) ;
+    flex: 1;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: left;
+    }
+
+h2 {
+  text-align: center;
+  color: yellow;
+}
+
+.presupuesto {
+  margin-top: 30px;
+  background-color: white;
+  color: black;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.presupuesto h3 {
+  margin: 5px 0;
+}
